@@ -6,26 +6,26 @@
   <title>Connexion Agent</title>
   <link href="style.css" rel="stylesheet" />
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body class="bg-gradient-to-r from-orange-500 via-white to-green-600 flex items-center justify-center min-h-screen">
 
-  <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md border-t-8 border-orange-500">
+  <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md border-t-8 border-orange-600">
     <h1 class="text-2xl font-bold text-center text-green-700 mb-6">Connexion Agent</h1>
 
     <!-- 🔔 Message d'erreur -->
     <div id="messageErreur" class="hidden text-sm text-red-600 bg-red-100 border border-red-400 rounded px-4 py-2 mb-4"></div>
 
-    <form id="formConnexion" action="#" method="POST" class="space-y-4">
+    <form id="formAgent" action="#" method="POST" class="space-y-4">
       
       <!-- Email -->
       <div>
-        <label for="email" class="block text-sm font-medium text-orange-600">Email</label>
+        <label for="email" class="block text-sm font-medium text-orange-700">Adresse Email</label>
         <input type="email" id="email" name="email" required
                class="mt-1 block w-full rounded-md border border-gray-300 p-2 focus:ring-green-600 focus:border-green-600" />
       </div>
 
       <!-- Mot de passe -->
       <div>
-        <label for="password" class="block text-sm font-medium text-orange-600">Mot de passe</label>
+        <label for="password" class="block text-sm font-medium text-orange-700">Mot de passe</label>
         <input type="password" id="password" name="password" required
                class="mt-1 block w-full rounded-md border border-gray-300 p-2 focus:ring-green-600 focus:border-green-600" />
       </div>
@@ -42,31 +42,27 @@
 
   <!-- ✅ Script de validation -->
   <script>
-    document.getElementById("formConnexion").addEventListener("submit", function (e) {
+    document.getElementById("formAgent").addEventListener("submit", function (e) {
       e.preventDefault();
 
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value.trim();
       const messageErreur = document.getElementById("messageErreur");
 
-      // Validation simple
       if (!email || !password) {
-        messageErreur.textContent = "Veuillez remplir tous les champs.";
+        messageErreur.textContent = "Tous les champs sont obligatoires.";
         messageErreur.classList.remove("hidden");
         return;
       }
 
-      // Exemple de format email (simple)
       if (!email.includes("@") || !email.includes(".")) {
         messageErreur.textContent = "Adresse email invalide.";
         messageErreur.classList.remove("hidden");
         return;
       }
 
-      // Si OK (simulation de succès)
       messageErreur.classList.add("hidden");
-      alert("Connexion réussie (simulation) !");
-      // Tu peux ensuite envoyer les données vers ton back-end ici
+      alert("Connexion agent réussie (simulation) !");
     });
   </script>
 
