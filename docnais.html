@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Acte de Naissance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-black p-10 max-w-3xl mx-auto border border-gray-400 shadow">
+
+  <!-- En-tête officiel -->
+  <div class="text-center border-b pb-4 mb-6">
+    <p class="text-sm uppercase font-semibold">République de Côte d’Ivoire</p>
+    <p class="italic text-sm">Union – Discipline – Travail</p>
+    <h2 class="mt-4 text-xl font-bold">COMMUNE DE YOPOUGON</h2>
+    <p class="text-sm">CENTRE D’ÉTAT CIVIL</p>
+    <h3 class="text-lg font-semibold mt-4 uppercase">Extrait d’acte de naissance</h3>
+  </div>
+
+  <!-- Corps du document -->
+  <div class="text-[16px] leading-relaxed space-y-3" id="modele-acte">
+    <p><strong>Numéro de registre :</strong> <span id="champ_registre">---</span></p>
+
+    <p>Le <span id="champ_date_lettres">...</span>, à <span id="champ_heure_lettres">...</span>, est né(e) à
+      <span id="champ_lieu">...</span>, un(e) enfant du sexe <span id="champ_sexe">...</span>,
+      que les déclarants ont dit se nommer :
+      <span id="champ_nom_prenom" class="uppercase font-bold">...</span>
+    </p>
+
+    <p>Fils/Fille de <span id="champ_pere">...</span><span id="champ_nationalite_pere">...</span> domicilié à <span id="champ_domicile_pere">...</span></p>
+    <p>et de <span id="champ_mere">...</span><span id="champ_nationalite_mere">...</span> domiciliée à <span id="champ_domicile_mere">...</span>.</p>
+
+    <p>Certifié véritable extrait conforme aux indications portées au registre.</p>
+
+    <p>Délivré à Yopougon, le <span id="champ_date_delivrance">...</span></p>
+
+    <!-- Signature -->
+    <p class="mt-6">L’officier de l’état civil</p>
+    <img src="signature-maire.png" alt="Signature" class="w-32 mt-1">
+    <p class="italic text-sm text-gray-600">Signé électroniquement</p>
+  </div>
+<script>
+  function dateEnLettres(dateStr) {
+    const mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
+                  "août", "septembre", "octobre", "novembre", "décembre"];
+    const [y, m, d] = dateStr.split("-");
+    return `${parseInt(d)} ${mois[parseInt(m)-1]} ${y}`;
+  }
+
+  function heureEnLettres(timeStr) {
+    const [h, m] = timeStr.split(":").map(Number);
+    return `${h} ${h === 1 ? 'heure' : 'heures'} ${m > 0 ? m + ' minutes' : ''}`;
+  }
+
+  document.getElementById("formulaire").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Récupération des valeurs
+    const nom = document.getElementById("nom_enfant_input").value;
+    const date = document.getElementById("date_naissance_input").value;
+    const heure = document.getElementById("heure_naissance_input").value;
+    const lieu = document.getElementById("lieu_input").value;
+    const pere = document.getElementById("nom_pere_input").value;
+    const domicilePere = document.getElementById("domicile_pere_input").value;
+    const nationalitePere = document.getElementById("nationalite_pere_input").value;
+    const mere = document.getElementById("nom_mere_input").value;
+    const domicileMere = document.getElementById("domicile_mere_input").value;
+    const nationaliteMere = document.getElementById("nationalite_mere_input").value;
+    const registre = document.getElementById("registre_input").value;
+    const dateDelivrance = new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+    // Injection dans le modèle
+    document.getElementById("nom_enfant").textContent = nom;
+    document.getElementById("date_lettres").textContent = dateEnLettres(date);
+    document.getElementById("heure_lettres").textContent = heureEnLettres(heure);
+    document.getElementById("lieu").textContent = lieu;
+    document.getElementById("nom_pere").textContent = pere;
+    document.getElementById("domicile_pere").textContent = domicilePere;
+    document.getElementById("nationalite_pere").textContent = nationalitePere;
+    document.getElementById("nom_mere").textContent = mere;
+    document.getElementById("domicile_mere").textContent = domicileMere;
+    document.getElementById("nationalite_mere").textContent = nationaliteMere;
+    document.getElementById("registre").textContent = registre;
+    document.getElementById("date_delivrance").textContent = dateDelivrance;
+
+    // Scroll vers le document
+    document.getElementById("nom_enfant").scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>

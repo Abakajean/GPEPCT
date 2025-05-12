@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Demande d’acte d’état civil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 py-10 px-4">
+
+  <div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-lg border-b-8 border-green-600">
+    <div class="text-center mb-6">
+      <h1 class="text-2xl font-bold text-green-700 uppercase">République de Côte d’Ivoire</h1>
+      <img class="mx-auto" src="armoiries.jpg" alt="Armoiries de la République de Côte d’Ivoire">
+      <div class="flex justify-center items-center space-x-2 mt-4">
+        <p class="italic text-orange-600">Union</p><p>–</p>
+        <p class="italic text-gray-700">Discipline</p><p>–</p>
+        <p class="italic text-green-600">Travail</p>
+      </div>
+      <h2 class="text-xl font-semibold text-center text-orange-600 mt-4">Formulaire de demande d’acte</h2>
+    </div>
+
+    <form id="formDemande" class="space-y-6 text-sm" onsubmit="return validerFormulaire(event)">
+
+      <!-- Numéro de registre -->
+      <div>
+        <label class="block font-medium text-gray-700">Numéro de registre (si connu)</label>
+        <input type="text" id="numero_registre" class="w-full mt-1 p-2 border rounded">
+      </div>
+
+      <!-- Type d’acte -->
+      <div>
+        <label class="block font-medium text-gray-700">Type d’acte recherché</label>
+        <select id="type_acte" class="w-full mt-1 p-2 border rounded" onchange="afficherChamps()">
+          <option value="">-- Sélectionner --</option>
+          <option value="naissance">Acte de naissance</option>
+          <option value="deces">Acte de décès</option>
+          <option value="mariage">Acte de mariage</option>
+          <option value="divorce">Acte de divorce</option>
+        </select>
+      </div>
+
+      <!-- Champs spécifiques -->
+      <div id="champs_specifiques"></div>
+
+      <!-- Bouton -->
+      <div class="md:flex md:justify-center">
+        <button type="submit" class=" bg-green-600 text-white py-2 px-4 rounded-full hover:bg-orange-600 transition">
+          Soumettre la demande
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function afficherChamps() {
+      const type = document.getElementById("type_acte").value;
+      const zone = document.getElementById("champs_specifiques");
+      zone.innerHTML = ""; // reset
+
+      const blocs = {
+        naissance: `
+          <div>
+            <label class="block text-gray-700">Nom de l’enfant</label>
+            <input type="text" name="nom_enfant" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Date de naissance</label>
+            <input type="date" name="date_naissance" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Lieu de naissance</label>
+            <input type="text" name="lieu_naissance" class="w-full p-2 border rounded" required>
+          </div>
+        `,
+        deces: `
+          <div>
+            <label class="block text-gray-700">Nom du défunt</label>
+            <input type="text" name="nom_defunt" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Date de décès</label>
+            <input type="date" name="date_deces" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Lieu de décès</label>
+            <input type="text" name="lieu_deces" class="w-full p-2 border rounded" required>
+          </div>
+        `,
+        mariage: `
+          <div>
+            <label class="block text-gray-700">Date du mariage</label>
+            <input type="date" name="date_mariage" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Lieu du mariage</label>
+            <input type="text" name="lieu_mariage" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Nom de l’époux</label>
+            <input type="text" name="nom_epoux" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Nom de l’épouse</label>
+            <input type="text" name="nom_epouse" class="w-full p-2 border rounded" required>
+          </div>
+        `,
+        divorce: `
+          <div>
+            <label class="block text-gray-700">Nom de l’ex-conjoint</label>
+            <input type="text" name="nom_conjoint" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Nom de l’ex-conjointe</label>
+            <input type="text" name="nom_conjointe" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Date du jugement</label>
+            <input type="date" name="date_jugement" class="w-full p-2 border rounded" required>
+          </div>
+        `
+      };
+
+      zone.innerHTML = blocs[type] || "";
+    }
+
+    function validerFormulaire(event) {
+      const numero = document.getElementById("numero_registre").value.trim();
+      const type = document.getElementById("type_acte").value;
+      const zone = document.getElementById("champs_specifiques");
+
+      if (numero !== "") return true; // registre connu = suffisant
+
+      if (!type) {
+        alert("Veuillez sélectionner un type d’acte si vous n’avez pas le numéro de registre.");
+        return false;
+      }
+
+      // Vérifie que tous les inputs dans les champs spécifiques sont remplis
+      const inputs = zone.querySelectorAll("input");
+      for (let input of inputs) {
+        if (input.hasAttribute("required") && input.value.trim() === "") {
+          alert("Veuillez remplir tous les champs obligatoires pour l’acte sélectionné.");
+          input.focus();
+          return false;
+        }
+      }
+
+      return true;
+    }
+  </script>
+
+</body>
+</html>
