@@ -92,7 +92,7 @@
                         </div>
 
                         <div>
-                            <label for="domicile_epoux" class="block text-sm font-medium text-gray-700">Adresse</label>
+                            <label for="domicile_epoux" class="block text-sm font-medium text-gray-700">Domicile</label>
                             <input type="text" id="domicile_epoux" name="domicile_epoux" value="{{ old('domicile_epoux', $acte->domicile_epoux) }}" 
                                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('domicile_epoux') border-red-500 @enderror" required>
                             @error('domicile_epoux')
@@ -105,6 +105,15 @@
                             <input type="date" id="date_naissance_epoux" name="date_naissance_epoux" value="{{ old('date_naissance_epoux', $acte->date_naissance_epoux->format('Y-m-d')) }}" 
                                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('date_naissance_epoux') border-red-500 @enderror" required>
                             @error('date_naissance_epoux')
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
+                            <label for="lieu_naissance_epoux" class="block text-sm font-medium text-gray-700">Lieu de naissance</label>
+                            <input type="text" id="lieu_naissance_epoux" name="lieu_naissance_epoux" value="{{ old('lieu_naissance_epoux', $acte->lieu_naissance_epoux) }}" 
+                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('lieu_naissance_epoux') border-red-500 @enderror" required>
+                            @error('lieu_naissance_epoux')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
@@ -138,7 +147,7 @@
                         </div>
 
                         <div>
-                            <label for="domicile_epouse" class="block text-sm font-medium text-gray-700">Adresse</label>
+                            <label for="domicile_epouse" class="block text-sm font-medium text-gray-700">Domicile</label>
                             <input type="text" id="domicile_epouse" name="domicile_epouse" value="{{ old('domicile_epouse', $acte->domicile_epouse) }}" 
                                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('domicile_epouse') border-red-500 @enderror" required>
                             @error('domicile_epouse')
@@ -151,6 +160,15 @@
                             <input type="date" id="date_naissance_epouse" name="date_naissance_epouse" value="{{ old('date_naissance_epouse', $acte->date_naissance_epouse->format('Y-m-d')) }}" 
                                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('date_naissance_epouse') border-red-500 @enderror" required>
                             @error('date_naissance_epouse')
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
+                            <label for="lieu_naissance_epouse" class="block text-sm font-medium text-gray-700">Lieu de naissance</label>
+                            <input type="text" id="lieu_naissance_epouse" name="lieu_naissance_epouse" value="{{ old('lieu_naissance_epouse', $acte->lieu_naissance_epouse) }}" 
+                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('lieu_naissance_epouse') border-red-500 @enderror" required>
+                            @error('lieu_naissance_epouse')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
@@ -195,85 +213,19 @@
                         <div>
                             <label for="type_regime" class="block text-sm font-medium text-gray-700">Régime matrimonial</label>
                             <select id="type_regime" name="type_regime" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('type_regime') border-red-500 @enderror">
-                                <option value="communauté réduite aux acquêts" {{ old('type_regime', $acte->type_regime) == 'communauté réduite aux acquêts' ? 'selected' : '' }}>Communauté réduite aux acquêts</option>
-                                <option value="séparation de biens" {{ old('type_regime', $acte->type_regime) == 'séparation de biens' ? 'selected' : '' }}>Séparation de biens</option>
-                                <option value="communauté universelle" {{ old('type_regime', $acte->type_regime) == 'communauté universelle' ? 'selected' : '' }}>Communauté universelle</option>
+                                <option value="communaute_de_bien" {{ old('type_regime', $acte->type_regime) == 'communaute_de_bien' ? 'selected' : '' }}>Communauté de biens</option>
+                                <option value="separation_de_biens" {{ old('type_regime', $acte->type_regime) == 'separation_de_biens' ? 'selected' : '' }}>Séparation de biens</option>
                             </select>
                             @error('type_regime')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
 
-                        <!-- Témoins époux -->
-                        <div class="sm:col-span-2 mt-8 pt-8 border-t border-gray-200">
-                            <h3 class="text-lg font-medium text-green-700 flex items-center">
-                                <svg class="h-5 w-5 mr-2 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                                Témoin de l'époux
-                            </h3>
-                        </div>
-
                         <div>
-                            <label for="temoin_epoux_nom" class="block text-sm font-medium text-gray-700">Nom complet</label>
-                            <input type="text" id="temoin_epoux_nom" name="temoin_epoux_nom" value="{{ old('temoin_epoux_nom', $acte->temoin_epoux_nom) }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epoux_nom') border-red-500 @enderror" required>
-                            @error('temoin_epoux_nom')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="temoin_epoux_profession" class="block text-sm font-medium text-gray-700">Profession</label>
-                            <input type="text" id="temoin_epoux_profession" name="temoin_epoux_profession" value="{{ old('temoin_epoux_profession', $acte->temoin_epoux_profession) }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epoux_profession') border-red-500 @enderror" required>
-                            @error('temoin_epoux_profession')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="temoin_epoux_domicile" class="block text-sm font-medium text-gray-700">Adresse</label>
-                            <input type="text" id="temoin_epoux_domicile" name="temoin_epoux_domicile" value="{{ old('temoin_epoux_domicile', $acte->temoin_epoux_domicile) }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epoux_domicile') border-red-500 @enderror" required>
-                            @error('temoin_epoux_domicile')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <!-- Témoins épouse -->
-                        <div class="sm:col-span-2 mt-8 pt-8 border-t border-gray-200">
-                            <h3 class="text-lg font-medium text-green-700 flex items-center">
-                                <svg class="h-5 w-5 mr-2 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                                Témoin de l'épouse
-                            </h3>
-                        </div>
-
-                        <div>
-                            <label for="temoin_epouse_nom" class="block text-sm font-medium text-gray-700">Nom complet</label>
-                            <input type="text" id="temoin_epouse_nom" name="temoin_epouse_nom" value="{{ old('temoin_epouse_nom', $acte->temoin_epouse_nom) }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epouse_nom') border-red-500 @enderror" required>
-                            @error('temoin_epouse_nom')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="temoin_epouse_profession" class="block text-sm font-medium text-gray-700">Profession</label>
-                            <input type="text" id="temoin_epouse_profession" name="temoin_epouse_profession" value="{{ old('temoin_epouse_profession', $acte->temoin_epouse_profession) }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epouse_profession') border-red-500 @enderror" required>
-                            @error('temoin_epouse_profession')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="temoin_epouse_domicile" class="block text-sm font-medium text-gray-700">Adresse</label>
-                            <input type="text" id="temoin_epouse_domicile" name="temoin_epouse_domicile" value="{{ old('temoin_epouse_domicile', $acte->temoin_epouse_domicile) }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epouse_domicile') border-red-500 @enderror" required>
-                            @error('temoin_epouse_domicile')
+                            <label for="date_declaration_mariage" class="block text-sm font-medium text-gray-700">Date de déclaration de mariage</label>
+                            <input type="date" id="date_declaration_mariage" name="date_declaration_mariage" value="{{ old('date_declaration_mariage', $acte->date_declaration_mariage->format('Y-m-d')) }}" 
+                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('date_declaration_mariage') border-red-500 @enderror" required>
+                            @error('date_declaration_mariage')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>

@@ -21,11 +21,11 @@ return new class extends Migration
             $table->string('lieu_naissance');
             $table->time('heure_de_naissance');
             $table->string('nom_et_prenom_pere');
-            $table->string('pere_profession');
-            $table->string('pere_domicile');
+            // $table->string('pere_profession');
+            // $table->string('pere_domicile');
             $table->string('nom_et_prenom_mere');
-            $table->string('mere_profession');
-            $table->string('mere_domicile');
+            // $table->string('mere_profession');
+            // $table->string('mere_domicile');
             $table->date('date_declaration_naissance');
             $table->timestamps();
         });

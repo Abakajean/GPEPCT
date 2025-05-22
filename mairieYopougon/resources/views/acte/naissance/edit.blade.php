@@ -128,26 +128,6 @@
                                 @enderror
                             </div>
 
-                            <div>
-                                <label for="pere_profession" class="block text-sm font-medium text-green-800">Profession</label>
-                                <input type="text" id="pere_profession" name="pere_profession" value="{{ old('pere_profession', $acte->pere_profession) }}"
-                                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                                       required>
-                                @error('pere_profession')
-                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="pere_domicile" class="block text-sm font-medium text-green-800">Domicile</label>
-                                <input type="text" id="pere_domicile" name="pere_domicile" value="{{ old('pere_domicile', $acte->pere_domicile) }}"
-                                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                                       required>
-                                @error('pere_domicile')
-                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
                             <!-- Section mère -->
                             <div class="sm:col-span-2 border-t border-green-200 pt-4 mt-2">
                                 <h3 class="text-lg font-medium text-green-800 flex items-center">
@@ -167,23 +147,13 @@
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
-
+                            
                             <div>
-                                <label for="mere_profession" class="block text-sm font-medium text-green-800">Profession</label>
-                                <input type="text" id="mere_profession" name="mere_profession" value="{{ old('mere_profession', $acte->mere_profession) }}"
+                                <label for="date_declaration_naissance" class="block text-sm font-medium text-green-800">Date de déclaration de naissance</label>
+                                <input type="date" id="date_declaration_naissance" name="date_declaration_naissance" value="{{ old('date_declaration_naissance', $acte->date_declaration_naissance->format('Y-m-d')) }}"
                                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                                        required>
-                                @error('mere_profession')
-                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="mere_domicile" class="block text-sm font-medium text-green-800">Domicile</label>
-                                <input type="text" id="mere_domicile" name="mere_domicile" value="{{ old('mere_domicile', $acte->mere_domicile) }}"
-                                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                                       required>
-                                @error('mere_domicile')
+                                @error('date_declaration_naissance')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>

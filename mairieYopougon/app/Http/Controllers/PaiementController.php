@@ -34,8 +34,8 @@ class PaiementController extends Controller
             'citoyen_id' => $citoyen->id,
             'moyen_paiement' => $request->moyen_paiement,
             'montant' => 500,
-            'reference_paiement' => uniqid(),
-            'utilise' => true
+            // 'reference_paiement' => uniqid(),
+            // 'utilise' => true
         ]);
 
         // Récupérer l'acte depuis la session

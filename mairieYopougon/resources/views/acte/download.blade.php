@@ -74,8 +74,8 @@
                 <p>Je soussigné, Officier de l'État Civil de la commune de Yopougon, certifie que :</p>
                 <p>L'enfant {{ $acte->nom_enfant }} {{ $acte->prenom_enfant }},</p>
                 <p>Né(e) le {{ $acte->date_naissance->format('d/m/Y') }} à {{ $acte->lieu_naissance }},</p>
-                <p>Fils/Fille de {{ $acte->nom_et_prenom_pere }}, {{ $acte->pere_profession }}, demeurant à {{ $acte->pere_adresse }},</p>
-                <p>Et de {{ $acte->nom_et_prenom_mere }}, {{ $acte->mere_profession }}, demeurant à {{ $acte->mere_adresse }},</p>
+                <p>Fils/Fille de {{ $acte->nom_et_prenom_pere }}</p>
+                <p>Et de {{ $acte->nom_et_prenom_mere }}</p>
                 
             @elseif($type == 'mariage')
                

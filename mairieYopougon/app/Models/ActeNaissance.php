@@ -23,11 +23,11 @@ class ActeNaissance extends Model
         'lieu_naissance',
         'heure_de_naissance',
         'nom_et_prenom_pere',
-        'pere_profession',
-        'pere_domicile',
+        // 'pere_profession',
+        // 'pere_domicile',
         'nom_et_prenom_mere',
-        'mere_profession',
-        'mere_domicile',
+        // 'mere_profession',
+        // 'mere_domicile',
         'date_declaration_naissance'
     ];
 }

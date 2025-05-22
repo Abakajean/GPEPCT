@@ -112,13 +112,13 @@
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
-                            
-                            <!-- Cause de décès -->
-                            <div class="md:col-span-2">
-                                <label for="cause_deces" class="block text-sm font-medium text-gray-700">Cause du décès</label>
-                                <textarea id="cause_deces" name="cause_deces" rows="3"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500">{{ old('cause_deces') }}</textarea>
-                                @error('cause_deces')
+
+                            <div>
+                                <label for="defunt_domicile" class="block text-sm font-medium text-gray-700">Domicile</label>
+                                <input type="text" id="defunt_domicile" name="defunt_domicile" value="{{ old('defunt_domicile') }}"
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
+                                    required>
+                                @error('defunt_domicile')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
@@ -178,43 +178,14 @@
                     
                     <!-- Section Déclarant -->
                     <div class="border-t border-gray-200 pt-4">
-                        <h2 class="text-lg font-medium text-gray-900 bg-green-50 px-3 py-2 rounded-md">
-                            <i class="fas fa-user-edit mr-2 text-orange-500"></i>Informations sur le déclarant
-                        </h2>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                            <!-- Nom déclarant -->
-                            <div>
-                                <label for="declarant_nom" class="block text-sm font-medium text-gray-700">Nom</label>
-                                <input type="text" id="declarant_nom" name="declarant_nom" value="{{ old('declarant_nom') }}"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
-                                    required>
-                                @error('declarant_nom')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-                            
-                            <!-- Profession déclarant -->
-                            <div>
-                                <label for="declarant_profession" class="block text-sm font-medium text-gray-700">Profession</label>
-                                <input type="text" id="declarant_profession" name="declarant_profession" value="{{ old('declarant_profession') }}"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
-                                    required>
-                                @error('declarant_profession')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-                            
-                            <!-- Domicile déclarant -->
-                            <div>
-                                <label for="declarant_domicile" class="block text-sm font-medium text-gray-700">Domicile</label>
-                                <input type="text" id="declarant_domicile" name="declarant_domicile" value="{{ old('declarant_domicile') }}"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
-                                    required>
-                                @error('declarant_domicile')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
+                        <div>
+                            <label for="date_de_delivrance_deces" class="block text-sm font-medium text-gray-700">Date de naissance</label>
+                            <input type="date" id="date_de_delivrance_deces" name="date_de_delivrance_deces" value="{{ old('date_de_delivrance_deces') }}"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
+                                required>
+                            @error('date_de_delivrance_deces')
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     

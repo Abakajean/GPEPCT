@@ -21,13 +21,7 @@ return new class extends Migration
             $table->string('domicile_epoux');
             $table->date('date_naissance_epoux');
             $table->string('lieu_naissance_epoux');
-            $table->string('epoux_nationalite');
-            $table->string('nom_pere_epoux');
-            $table->string('pere_profession');
-            $table->string('domicile_pere');
-            $table->string('nom_mere_epoux');
-            $table->string('mere_profession');
-            $table->string('domicile_mere');
+            
 
             // Informations sur l'épouse
             $table->string('nom_epouse');
@@ -35,8 +29,8 @@ return new class extends Migration
             $table->string('domicile_epouse');
             $table->date('date_naissance_epouse');
             $table->string('lieu_naissance_epouse');
-            $table->string('nom_pere_epouse');
-            $table->string('nom_mere_epouse');
+            // $table->string('nom_pere_epouse');
+            // $table->string('nom_mere_epouse');
 
             // Informations sur le mariage
             $table->date('date_mariage');
@@ -45,15 +39,15 @@ return new class extends Migration
             $table->string('type_regime');
 
             // Témoins
-            $table->string('temoin_epoux_nom');
-            $table->string('temoin_epoux_profession');
-            $table->string('temoin_epoux_domicile');
+            // $table->string('temoin_epoux_nom');
+            // $table->string('temoin_epoux_profession');
+            // $table->string('temoin_epoux_domicile');
 
-            $table->string('temoin_epouse_nom');
-            $table->string('temoin_epouse_profession');
-            $table->string('temoin_epouse_domicile');
+            // $table->string('temoin_epouse_nom');
+            // $table->string('temoin_epouse_profession');
+            // $table->string('temoin_epouse_domicile');
 
-            // $table->string('date_declaration');
+            $table->string('date_declaration_mariage');
             $table->timestamps();
         });
     }

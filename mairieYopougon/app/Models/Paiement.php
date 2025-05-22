@@ -10,11 +10,11 @@ class Paiement extends Model
     use HasFactory;
 
     protected $fillable = [
-        'reference_paiement',
+        // 'reference_paiement',
         'montant',
         'moyen_paiement',
         'citoyen_id',
-        'utilise'
+        // 'utilise'
     ];
 
     public function citoyen()

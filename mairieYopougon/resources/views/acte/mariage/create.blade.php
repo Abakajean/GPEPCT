@@ -8,11 +8,8 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h1 class="text-2xl font-bold text-white">
-                        Modifier un acte de mariage
+                        Ajout d'un acte de mariage
                     </h1>
-                    <p class="mt-1 text-orange-100">
-                        Mise à jour des informations du mariage
-                    </p>
                 </div>
                 <div class="flex items-center space-x-2">
                     <a href="{{ route('acte.mariage.index') }}" class="flex items-center bg-white text-orange-600 hover:bg-orange-50 font-medium py-2 px-4 rounded-lg transition duration-200">
@@ -102,6 +99,15 @@
                             @enderror
                         </div>
 
+                        <div>
+                            <label for="lieu_naissance_epoux" class="block text-sm font-medium text-gray-700">Lieu de naissance</label>
+                            <input type="text" id="lieu_naissance_epoux" name="lieu_naissance_epoux" value="{{ old('lieu_naissance_epoux') }}" 
+                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('lieu_naissance_epoux') border-red-500 @enderror">
+                            @error('lieu_naissance_epoux')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
                         <!-- Informations épouse -->
                         <div class="sm:col-span-2 mt-6 pt-6 border-t border-gray-200">
                             <h3 class="text-lg font-medium text-green-600 flex items-center">
@@ -144,6 +150,15 @@
                             <input type="date" id="date_naissance_epouse" name="date_naissance_epouse" value="{{ old('date_naissance_epouse') }}" 
                                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('date_naissance_epouse') border-red-500 @enderror">
                             @error('date_naissance_epouse')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
+                            <label for="lieu_naissance_epouse" class="block text-sm font-medium text-gray-700">Lieu de naissance</label>
+                            <input type="text" id="lieu_naissance_epouse" name="lieu_naissance_epouse" value="{{ old('lieu_naissance_epouse') }}" 
+                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('lieu_naissance_epouse') border-red-500 @enderror">
+                            @error('lieu_naissance_epouse')
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
@@ -196,76 +211,11 @@
                             @enderror
                         </div>
 
-                        <!-- Témoins époux -->
-                        <div class="sm:col-span-2 mt-6 pt-6 border-t border-gray-200">
-                            <h3 class="text-lg font-medium text-green-600 flex items-center">
-                                <svg class="h-5 w-5 mr-2 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                                Témoin de l'époux
-                            </h3>
-                        </div>
-
                         <div>
-                            <label for="temoin_epoux_nom" class="block text-sm font-medium text-gray-700">Nom</label>
-                            <input type="text" id="temoin_epoux_nom" name="temoin_epoux_nom" value="{{ old('temoin_epoux_nom') }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epoux_nom') border-red-500 @enderror">
-                            @error('temoin_epoux_nom')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="temoin_epoux_profession" class="block text-sm font-medium text-gray-700">Profession</label>
-                            <input type="text" id="temoin_epoux_profession" name="temoin_epoux_profession" value="{{ old('temoin_epoux_profession') }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epoux_profession') border-red-500 @enderror">
-                            @error('temoin_epoux_profession')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="temoin_epoux_domicile" class="block text-sm font-medium text-gray-700">Domicile</label>
-                            <input type="text" id="temoin_epoux_domicile" name="temoin_epoux_domicile" value="{{ old('temoin_epoux_domicile') }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epoux_domicile') border-red-500 @enderror">
-                            @error('temoin_epoux_domicile')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <!-- Témoins épouse -->
-                        <div class="sm:col-span-2 mt-6 pt-6 border-t border-gray-200">
-                            <h3 class="text-lg font-medium text-green-600 flex items-center">
-                                <svg class="h-5 w-5 mr-2 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                                Témoin de l'épouse
-                            </h3>
-                        </div>
-
-                        <div>
-                            <label for="temoin_epouse_nom" class="block text-sm font-medium text-gray-700">Nom</label>
-                            <input type="text" id="temoin_epouse_nom" name="temoin_epouse_nom" value="{{ old('temoin_epouse_nom') }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epouse_nom') border-red-500 @enderror">
-                            @error('temoin_epouse_nom')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="temoin_epouse_profession" class="block text-sm font-medium text-gray-700">Profession</label>
-                            <input type="text" id="temoin_epouse_profession" name="temoin_epouse_profession" value="{{ old('temoin_epouse_profession') }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epouse_profession') border-red-500 @enderror">
-                            @error('temoin_epouse_profession')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="temoin_epouse_domicile" class="block text-sm font-medium text-gray-700">Domicile</label>
-                            <input type="text" id="temoin_epouse_domicile" name="temoin_epouse_domicile" value="{{ old('temoin_epouse_domicile') }}" 
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('temoin_epouse_domicile') border-red-500 @enderror">
-                            @error('temoin_epouse_domicile')
+                            <label for="date_declaration_mariage" class="block text-sm font-medium text-gray-700">Date déclaraction de naissance</label>
+                            <input type="date" id="date_declaration_mariage" name="date_declaration_mariage" value="{{ old('date_declaration_mariage') }}" 
+                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm @error('date_declaration_mariage') border-red-500 @enderror">
+                            @error('date_declaration_mariage')
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>

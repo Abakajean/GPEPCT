@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('date_deces');
             $table->time('heure_deces');
             $table->string('lieu_deces');
-            $table->string('cause_deces');
+            // $table->string('cause_deces');
             $table->date('date_de_naissance_du_defunt');
             $table->string('lieu_de_naissance_du_defunt');
             $table->enum('sexe_defunt', ['masculin', 'féminin']);
@@ -26,10 +26,10 @@ return new class extends Migration
             $table->string('prenom_dernier_conjoint');
             $table->string('nom_pere_defunt');
             $table->string('nom_mere_defunt');
-            $table->string('declarant_nom');
-            $table->string('declarant_profession');
-            $table->string('declarant_domicile');
-            // $table->date('date_de_delivrance_deces');
+            // $table->string('declarant_nom');
+            // $table->string('declarant_profession');
+            $table->string('defunt_domicile');
+            $table->date('date_de_delivrance_deces');
             $table->timestamps();
         });
     }

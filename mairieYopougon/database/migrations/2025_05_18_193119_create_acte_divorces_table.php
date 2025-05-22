@@ -26,8 +26,8 @@ return new class extends Migration
             $table->string('domicile_ex_conjointe');
 
             $table->date('date_de_jugement');
-            $table->string('lieu_de_jugement');
-            // $table->date('date_de_delivrance_divorce');
+            // $table->string('lieu_de_jugement');
+            $table->date('date_de_delivrance_divorce');
 
             $table->timestamps();
         });

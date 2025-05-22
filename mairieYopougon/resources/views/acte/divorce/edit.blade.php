@@ -91,19 +91,6 @@
                             @enderror
                         </div>
 
-                        <div>
-                            <label for="profession_ex_conjoint" class="block text-sm font-medium text-gray-700">
-                                {{ __('Profession') }} <span class="text-orange-500">*</span>
-                            </label>
-                            <input id="profession_ex_conjoint" name="profession_ex_conjoint" type="text" 
-                                   value="{{ old('profession_ex_conjoint', $acte->profession_ex_conjoint) }}"
-                                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
-                                   required>
-                            @error('profession_ex_conjoint')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
                         <!-- Section épouse -->
                         <div class="sm:col-span-2 pt-4 mt-4 border-t border-orange-200">
                             <h3 class="text-lg font-medium text-orange-700">
@@ -163,19 +150,6 @@
                             @enderror
                         </div>
 
-                        <div>
-                            <label for="profession_ex_conjointe" class="block text-sm font-medium text-gray-700">
-                                {{ __('Profession') }} <span class="text-orange-500">*</span>
-                            </label>
-                            <input id="profession_ex_conjointe" name="profession_ex_conjointe" type="text" 
-                                   value="{{ old('profession_ex_conjointe', $acte->profession_ex_conjointe) }}"
-                                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
-                                   required>
-                            @error('profession_ex_conjointe')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
                         <!-- Section divorce -->
                         <div class="sm:col-span-2 pt-4 mt-4 border-t border-orange-200">
                             <h3 class="text-lg font-medium text-orange-700">
@@ -197,19 +171,6 @@
                         </div>
 
                         <div>
-                            <label for="lieu_de_jugement" class="block text-sm font-medium text-gray-700">
-                                {{ __('Lieu du jugement') }} <span class="text-orange-500">*</span>
-                            </label>
-                            <input id="lieu_de_jugement" name="lieu_de_jugement" type="text" 
-                                   value="{{ old('lieu_de_jugement', $acte->lieu_de_jugement) }}"
-                                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
-                                   required>
-                            @error('lieu_de_jugement')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
                             <label for="date_de_delivrance_divorce" class="block text-sm font-medium text-gray-700">
                                 {{ __('Date de délivrance') }} <span class="text-orange-500">*</span>
                             </label>
@@ -218,30 +179,6 @@
                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                                    required>
                             @error('date_de_delivrance_divorce')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div class="sm:col-span-2">
-                            <label for="motif_divorce" class="block text-sm font-medium text-gray-700">
-                                {{ __('Motif du divorce') }}
-                            </label>
-                            <textarea id="motif_divorce" name="motif_divorce" rows="3"
-                                      class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200">{{ old('motif_divorce', $acte->motif_divorce) }}</textarea>
-                            @error('motif_divorce')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="tribunal" class="block text-sm font-medium text-gray-700">
-                                {{ __('Tribunal') }} <span class="text-orange-500">*</span>
-                            </label>
-                            <input id="tribunal" name="tribunal" type="text" 
-                                   value="{{ old('tribunal', $acte->tribunal) }}"
-                                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
-                                   required>
-                            @error('tribunal')
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>

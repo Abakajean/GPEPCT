@@ -26,8 +26,8 @@ class ActeDivorce extends Model
         'lieu_naissance_ex_conjointe',
         'domicile_ex_conjointe',
         'date_de_jugement',
-        'lieu_de_jugement',
-        // 'date_de_delivrance_divorce'
+        // 'lieu_de_jugement',
+        'date_de_delivrance_divorce'
     ];
 
     protected $dates = ['date_divorce'];

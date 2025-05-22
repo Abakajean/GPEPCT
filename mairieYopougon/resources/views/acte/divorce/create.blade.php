@@ -123,12 +123,12 @@
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
-                            
+
                             <div>
-                                <label for="lieu_de_jugement" class="block text-sm font-medium text-gray-700">Lieu du jugement</label>
-                                <input type="text" id="lieu_de_jugement" name="lieu_de_jugement" value="{{ old('lieu_de_jugement') }}" 
+                                <label for="date_de_delivrance_divorce" class="block text-sm font-medium text-gray-700">Date de delivrance du divorce</label>
+                                <input type="date" id="date_de_delivrance_divorce" name="date_de_delivrance_divorce" value="{{ old('date_de_delivrance_divorce') }}" 
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
-                                @error('lieu_de_jugement')
+                                @error('date_de_delivrance_divorce')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>

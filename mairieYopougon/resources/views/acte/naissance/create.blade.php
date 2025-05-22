@@ -114,28 +114,6 @@
                                 @enderror
                             </div>
 
-                            <!-- Profession père -->
-                            <div>
-                                <label for="pere_profession" class="block text-sm font-medium text-green-800">Profession du père</label>
-                                <input type="text" id="pere_profession" name="pere_profession" value="{{ old('pere_profession') }}"
-                                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                                       required>
-                                @error('pere_profession')
-                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <!-- Domicile père -->
-                            <div>
-                                <label for="pere_domicile" class="block text-sm font-medium text-green-800">Domicile du père</label>
-                                <input type="text" id="pere_domicile" name="pere_domicile" value="{{ old('pere_domicile') }}"
-                                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                                       required>
-                                @error('pere_domicile')
-                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
                             <!-- Nom et prénom mère -->
                             <div>
                                 <label for="nom_et_prenom_mere" class="block text-sm font-medium text-green-800">Nom et prénom de la mère</label>
@@ -147,24 +125,13 @@
                                 @enderror
                             </div>
 
-                            <!-- Profession mère -->
+                            <!-- Date naissance -->
                             <div>
-                                <label for="mere_profession" class="block text-sm font-medium text-green-800">Profession de la mère</label>
-                                <input type="text" id="mere_profession" name="mere_profession" value="{{ old('mere_profession') }}"
+                                <label for="date_declaration_naissance" class="block text-sm font-medium text-green-800">Date de déclaration de naissance</label>
+                                <input type="date" id="date_declaration_naissance" name="date_declaration_naissance" value="{{ old('date_declaration_naissance') }}"
                                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                                        required>
-                                @error('mere_profession')
-                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <!-- Domicile mère -->
-                            <div>
-                                <label for="mere_domicile" class="block text-sm font-medium text-green-800">Domicile de la mère</label>
-                                <input type="text" id="mere_domicile" name="mere_domicile" value="{{ old('mere_domicile') }}"
-                                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                                       required>
-                                @error('mere_domicile')
+                                @error('date_declaration_naissance')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>

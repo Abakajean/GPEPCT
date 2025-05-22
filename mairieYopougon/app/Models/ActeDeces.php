@@ -11,6 +11,8 @@ class ActeDeces extends Model
 
     protected $casts = [
         'date_deces' => 'datetime',
+        'date_de_delivrance_deces' => 'datetime',
+        'date_de_naissance_du_defunt' => 'datetime',
     ];
 
     protected $fillable = [
@@ -19,7 +21,7 @@ class ActeDeces extends Model
         'date_deces',
         'heure_deces',
         'lieu_deces',
-        'cause_deces',
+        // 'cause_deces',
         'date_de_naissance_du_defunt',
         'lieu_de_naissance_du_defunt',
         'sexe_defunt',
@@ -27,10 +29,10 @@ class ActeDeces extends Model
         'prenom_dernier_conjoint',
         'nom_pere_defunt',
         'nom_mere_defunt',
-        'declarant_nom',
-        'declarant_profession',
-        'declarant_domicile',
-        // 'Date_de_delivrance_deces',
+        // 'declarant_nom',
+        // 'declarant_profession',
+        'defunt_domicile',
+        'date_de_delivrance_deces',
     ];
 
     protected $dates = ['date_deces'];

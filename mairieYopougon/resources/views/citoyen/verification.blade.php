@@ -34,11 +34,11 @@
                         </div>
                         <div>
                             <p class="text-sm font-medium text-gray-500">Nom du père</p>
-                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_pere }}</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_et_prenom_pere }}</p>
                         </div>
                         <div>
                             <p class="text-sm font-medium text-gray-500">Nom de la mère</p>
-                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_mere }}</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_et_prenom_mere }}</p>
                         </div>
                         <div>
                             <p class="text-sm font-medium text-gray-500">Numéro de registre</p>
@@ -46,11 +46,11 @@
                         </div>
                     </div>
                 @elseif($type == 'mariage')
-                    <!-- Détails acte mariage -->
+
                 @elseif($type == 'deces')
-                    <!-- Détails acte décès -->
+
                 @elseif($type == 'divorce')
-                    <!-- Détails acte divorce -->
+
                 @endif
             </div>
 

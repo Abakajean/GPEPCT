@@ -38,12 +38,12 @@ class ActeController extends Controller
             'lieu_naissance' => 'required|string|max:255',
             'heure_de_naissance' => 'required|date_format:H:i',
             'nom_et_prenom_pere' => 'required|string|max:255',
-            'pere_profession' => 'required|string|max:255',
-            'pere_domicile' => 'required|string|max:255',
+            // 'pere_profession' => 'required|string|max:255',
+            // 'pere_domicile' => 'required|string|max:255',
             'nom_et_prenom_mere' => 'required|string|max:255',
-            'mere_profession' => 'required|string|max:255',
-            'mere_domicile' => 'required|string|max:255',
-            // 'date_declaration_naissance' => 'required|date',
+            // 'mere_profession' => 'required|string|max:255',
+            // 'mere_domicile' => 'required|string|max:255',
+            'date_declaration_naissance' => 'required|date',
         ]);
 
         ActeNaissance::create($validated);
@@ -67,12 +67,12 @@ class ActeController extends Controller
             'lieu_naissance' => 'required|string|max:255',
             'heure_de_naissance' => 'required|date_format:H:i',
             'nom_et_prenom_pere' => 'required|string|max:255',
-            'pere_profession' => 'required|string|max:255',
-            'pere_domicile' => 'required|string|max:255',
+            // 'pere_profession' => 'required|string|max:255',
+            // 'pere_domicile' => 'required|string|max:255',
             'nom_et_prenom_mere' => 'required|string|max:255',
-            'mere_profession' => 'required|string|max:255',
-            'mere_domicile' => 'required|string|max:255',
-            // 'date_declaration_naissance' => 'required|date',
+            // 'mere_profession' => 'required|string|max:255',
+            // 'mere_domicile' => 'required|string|max:255',
+            'date_declaration_naissance' => 'required|date',
         ]);
 
         $acte->update($validated);
@@ -107,37 +107,37 @@ class ActeController extends Controller
             'domicile_epoux' => 'required|string|max:255',
             'date_naissance_epoux' => 'required|date',
             'lieu_naissance_epoux' => 'required|string|max:255',
-            'epoux_nationalite' => 'required|string|max:255',
+            // 'epoux_nationalite' => 'required|string|max:255',
 
-            'nom_pere_epoux' => 'required|string|max:255',
-            'pere_profession' => 'required|string|max:255',
-            'domicile_pere' => 'required|string|max:255',
-            'nom_mere_epoux' => 'required|string|max:255',
-            'mere_profession' => 'required|string|max:255',
-            'domicile_mere' => 'required|string|max:255',
+            // 'nom_pere_epoux' => 'required|string|max:255',
+            // 'pere_profession' => 'required|string|max:255',
+            // 'domicile_pere' => 'required|string|max:255',
+            // 'nom_mere_epoux' => 'required|string|max:255',
+            // 'mere_profession' => 'required|string|max:255',
+            // 'domicile_mere' => 'required|string|max:255',
 
             'nom_epouse' => 'required|string|max:255',
             'epouse_profession' => 'required|string|max:255',
             'domicile_epouse' => 'required|string|max:255',
             'date_naissance_epouse' => 'required|date',
             'lieu_naissance_epouse' => 'required|string|max:255',
-            'nom_pere_epouse' => 'required|string|max:255',
-            'nom_mere_epouse' => 'required|string|max:255',
-            'epouse_nationalite' => 'required|string|max:255',
+            // 'nom_pere_epouse' => 'required|string|max:255',
+            // 'nom_mere_epouse' => 'required|string|max:255',
+            // 'epouse_nationalite' => 'required|string|max:255',
 
             'date_mariage' => 'required|date',
             'heure_mariage' => 'nullable',
             'lieu_mariage' => 'required|string|max:255',
             'type_regime' => 'required|string|',
 
-            'temoin_epoux_nom' => 'required|string|max:255',
-            'temoin_epoux_profession' => 'required|string|max:255',
-            'temoin_epoux_domicile' => 'required|string|max:255',
+            // 'temoin_epoux_nom' => 'required|string|max:255',
+            // 'temoin_epoux_profession' => 'required|string|max:255',
+            // 'temoin_epoux_domicile' => 'required|string|max:255',
 
-            'temoin_epouse_nom' => 'required|string|max:255',
-            'temoin_epouse_profession' => 'required|string|max:255',
-            'temoin_epouse_domicile' => 'required|string|max:255',
-            // 'date_declaration' => 'required|date',
+            // 'temoin_epouse_nom' => 'required|string|max:255',
+            // 'temoin_epouse_profession' => 'required|string|max:255',
+            // 'temoin_epouse_domicile' => 'required|string|max:255',
+            'date_declaration_mariage' => 'required|date',
         ]);
 
         ActeMariage::create($validated);
@@ -183,14 +183,14 @@ class ActeController extends Controller
             'lieu_mariage' => 'required|string|max:255',
             'type_regime' => 'required|string',
 
-            'temoin_epoux_nom' => 'required|string|max:255',
-            'temoin_epoux_profession' => 'required|string|max:255',
-            'temoin_epoux_domicile' => 'required|string|max:255',
+            // 'temoin_epoux_nom' => 'required|string|max:255',
+            // 'temoin_epoux_profession' => 'required|string|max:255',
+            // 'temoin_epoux_domicile' => 'required|string|max:255',
 
-            'temoin_epouse_nom' => 'required|string|max:255',
-            'temoin_epouse_profession' => 'required|string|max:255',
-            'temoin_epouse_domicile' => 'required|string|max:255',
-            // 'date_declaration' => 'required|date',
+            // 'temoin_epouse_nom' => 'required|string|max:255',
+            // 'temoin_epouse_profession' => 'required|string|max:255',
+            // 'temoin_epouse_domicile' => 'required|string|max:255',
+            'date_declaration_mariage' => 'required|date',
         ]);
 
         $acte->update($validated);
@@ -231,8 +231,8 @@ class ActeController extends Controller
             'domicile_ex_conjointe' => 'required|string|max:255',
 
             'date_de_jugement' => 'required|date',
-            'lieu_de_jugement' => 'required|string|max:255',
-            // 'date_de_delivrance_divorce' => 'required|date',
+            // 'lieu_de_jugement' => 'required|string|max:255',
+            'date_de_delivrance_divorce' => 'required|date',
         ]);
 
         ActeDivorce::create($validated);
@@ -249,16 +249,17 @@ class ActeController extends Controller
     {
         $validated = $request->validate([
             'numero_registre' => 'required|string|size:5|unique:acte_divorces,numero_registre,'.$acte->id,
-            'nom_epoux' => 'required|string|max:255',
-            'epoux_profession' => 'required|string|max:255',
-            'epoux_adresse' => 'required|string|max:255',
-            'nom_epouse' => 'required|string|max:255',
-            'epouse_profession' => 'required|string|max:255',
-            'epouse_adresse' => 'required|string|max:255',
-            'date_divorce' => 'required|date',
-            'lieu_divorce' => 'required|string|max:255',
-            'motif_divorce' => 'required|string|max:255',
-            'tribunal' => 'required|string|max:255',
+            'nom_ex_conjoint' => 'required|string|max:255',
+            'date_naissance_ex_conjoint' => 'required|date',
+            'lieu_naissance_ex_conjoint' => 'required|string|max:255',
+            'domicile_ex_conjoint' => 'required|string|max:255',
+            'nom_ex_conjointe' => 'required|string|max:255',
+            'date_naissance_ex_conjointe' => 'required|date',
+            'lieu_naissance_ex_conjointe' => 'required|string|max:255',
+            'domicile_ex_conjointe' => 'required|string|max:255',
+            'date_de_jugement' => 'required|date',
+            // 'lieu_de_jugement' => 'required|string|max:255',
+            'date_de_delivrance_divorce' => 'required|date',
         ]);
 
         $acte->update($validated);
@@ -292,7 +293,7 @@ class ActeController extends Controller
             'date_deces' => 'required|date',
             'heure_deces' => 'required|date_format:H:i',
             'lieu_deces' => 'required|string|max:255',
-            'cause_deces' => 'required|string|max:255',
+            // 'cause_deces' => 'required|string|max:255',
             'date_de_naissance_du_defunt' => 'required|date',
             'lieu_de_naissance_du_defunt' => 'required|string|max:255',
             'sexe_defunt' => 'required|in:masculin,féminin',
@@ -300,10 +301,10 @@ class ActeController extends Controller
             'prenom_dernier_conjoint' => 'required|string|max:255',
             'nom_pere_defunt' => 'required|string|max:255',
             'nom_mere_defunt' => 'required|string|max:255',
-            'declarant_nom' => 'required|string|max:255',
-            'declarant_profession' => 'required|string|max:255',
-            'declarant_domicile' => 'required|string|max:255',
-            // 'date_de_delivrance_deces' => 'required|date',
+            // 'declarant_nom' => 'required|string|max:255',
+            // 'declarant_profession' => 'required|string|max:255',
+            'defunt_domicile' => 'required|string|max:255',
+            'date_de_delivrance_deces' => 'required|date',
         ]);
 
         ActeDeces::create($validated);
@@ -328,13 +329,15 @@ class ActeController extends Controller
             'date_de_naissance_du_defunt' => 'required|date',
             'lieu_de_naissance_du_defunt' => 'required|string|max:255',
             'sexe_defunt' => 'required|in:masculin,féminin',
+            'nom_dernier_conjoint' => 'required|string|max:255',
+            'prenom_dernier_conjoint' => 'required|string|max:255',
             'nom_pere_defunt' => 'required|string|max:255',
             'nom_mere_defunt' => 'required|string|max:255',
-            'declarant_nom' => 'required|string|max:255',
+            // 'declarant_nom' => 'required|string|max:255',
             // 'declarant_prenom' => 'required|string|max:255',
-            'declarant_profession' => 'required|string|max:255',
-            'declarant_domicile' => 'required|string|max:255',
-            // 'date_de_delivrance_deces' => 'required|date',
+            // 'declarant_profession' => 'required|string|max:255',
+            'defunt_domicile' => 'required|string|max:255',
+            'date_de_delivrance_deces' => 'required|date',
         ]);
 
         $acte->update($validated);
