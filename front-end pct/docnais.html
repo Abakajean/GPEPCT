@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Acte de Naissance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-white text-black p-10 max-w-3xl mx-auto border border-gray-400 shadow">
+ 
+
+  <!-- En-tête officiel -->
+  <div class="text-center border-b pb-4 mb-6">
+    <p class="text-sm uppercase font-semibold">République de Côte d’Ivoire</p>
+    <p class="italic text-sm">Union – Discipline – Travail</p>
+    <h2 class="mt-4 text-xl font-bold">COMMUNE DE YOPOUGON</h2>
+    <p class="text-sm">CENTRE D’ÉTAT CIVIL</p>
+    <h3 class="text-lg font-semibold mt-4 uppercase">Extrait d’acte de naissance</h3>
+  </div>
+
+  <!-- Corps du document -->
+  <div class="text-[16px] leading-relaxed space-y-3" id="modele-acte">
+     <img src="imagedefond.png" class="absolute opacity-30 object-cover z-0" />
+    <p><strong>Numéro de registre :</strong> <span id="champ_registre">---</span></p>
+
+    <p>Le <span id="champ_date_lettres">...</span>, à <span id="champ_heure_lettres">...</span>, est né(e) à
+      <span id="champ_lieu">...</span>, un(e) enfant du sexe <span id="champ_sexe">...</span>,
+      que les déclarants ont dit se nommer :
+      <span id="champ_nom_prenom" class="uppercase font-bold">...</span>
+    </p>
+
+    <p>Fils/Fille de <span id="champ_pere">...</span><span id="champ_nationalite_pere">...</span> domicilié à <span id="champ_domicile_pere">...</span></p>
+    <p>et de <span id="champ_mere">...</span><span id="champ_nationalite_mere">...</span> domiciliée à <span id="champ_domicile_mere">...</span>.</p>
+
+    <p>Certifié véritable extrait conforme aux indications portées au registre.</p>
+
+    <p>Délivré à Yopougon, le <span id="champ_date_delivrance">...</span></p>
+
+    <!-- Signature -->
+    <p class="mt-6">L’officier de l’état civil</p>
+    <img src="signature-maire.png" alt="Signature" class="w-32 mt-1">
+    <p class="italic text-sm text-gray-600">Signé électroniquement</p>
+  </div>
+  <div class="mt-8 text-center">
+    <button id="btn-print" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-orange-600">Imprimer</button>
+  </div>
+</body>
+</html>
