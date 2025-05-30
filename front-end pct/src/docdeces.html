@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Acte de Décès</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div>
+  <div class="relative max-w-3xl w-full mx-auto my-10 border-2 border-orange-200 shadow-2xl overflow-hidden bg-white">
+    <!-- Image de fond décorative -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img src="motifciv2.png" alt="" class="w-full h-full object-cover opacity-15" />
+    </div>
+    <div class="relative z-10 p-8 md:p-12">
+      <!-- En-tête officiel -->
+      <div class="flex items-start justify-between border-b pb-4 mb-6">
+        <img src="logoabidjan.png" alt="Logo Abidjan" class="h-20 w-25 object-contain mr-4">
+        <div class="text-right">
+          <p class="text-sm uppercase font-semibold">République de Côte d'Ivoire</p>
+          <p class="italic text-sm">Union – Discipline – Travail</p>
+        </div>
+      </div>
+      <div class="text-center mb-6">
+        <h2 class="mt-4 text-xl font-bold">COMMUNE DE YOPOUGON</h2>
+        <p class="text-sm">CENTRE D'ÉTAT CIVIL</p>
+        <h3 class="text-lg font-semibold mt-4 uppercase">Extrait d'acte de décès</h3>
+      </div>
+      <div class="border-1 border-green-600 opacity-0,5 rounded-lg bg-white/90 p-6 md:p-8">
+        <!-- Corps du document en texte continu -->
+        <div class="text-base leading-relaxed space-y-3">
+          <p><strong>Numéro de registre :</strong> <span id="champ_registre">---</span></p>
+          
+          <p>
+            Le <span id="champ_date_deces">...</span> à <span id="champ_heure_deces">...</span>,
+            à <span id="champ_lieu_deces">...</span>, est décédé(e) :
+          </p>
+          
+          <p class="pl-4">
+            <span id="champ_nom_defunt" class="uppercase font-bold">...</span>,
+            du sexe <span id="champ_sexe_defunt">...</span>,
+            né(e) le <span id="champ_naissance_defunt">...</span> à <span id="champ_lieu_naissance_defunt">...</span>,
+            domicilié(e) à <span id="champ_domicile_defunt">...</span>,
+            fils/fille de <span id="champ_pere_defunt">...</span> et de <span id="champ_mere_defunt">...</span>,
+            époux/épouse de <span id="champ_prenom_conjoint">...</span> <span id="champ_nom_conjoint" class="uppercase">...</span>.
+          </p>
+          
+          <p>Certifié véritable extrait conforme aux indications portées au registre.</p>
+          <p>Délivré à Yopougon, le <span id="champ_date_delivrance">...</span></p><br>
+          
+          <!-- Signatures -->
+          <div class="flex flex-row w-full justify-between">
+            <div class="flex flex-col items-center">
+              <p class="mb-2">Le Maire</p>
+              <img src="maire.png" alt="Signature du maire" class="w-40 mb-2">
+            </div>
+            <div class="flex flex-col items-center">
+              <p class="mb-2">L'officier de l'état civil</p>
+              <img src="officier.png" alt="Signature de l'officier" class="w-32 mb-2">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="inset-x-0 bottom-0 pb-6 flex items-center justify-center bg-transparent z-50">
+    <button id="btn-print" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-orange-600 shadow-lg">Imprimer</button>
+  </div>
+</body>
+</html>
