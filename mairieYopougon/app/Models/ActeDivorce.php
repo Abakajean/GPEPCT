@@ -12,6 +12,8 @@ class ActeDivorce extends Model
     protected $casts = [
         'date_de_jugement' => 'datetime',
         'date_de_delivrance_divorce' => 'datetime',
+        'date_naissance_ex_conjoint' => 'datetime',
+        'date_naissance_ex_conjointe' => 'datetime',
     ];
 
 

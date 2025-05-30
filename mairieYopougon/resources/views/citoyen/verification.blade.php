@@ -25,8 +25,16 @@
                             <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_enfant }} {{ $acte->prenom_enfant }}</p>
                         </div>
                         <div>
+                            <p class="text-sm font-medium text-gray-500">Sexe</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ ucfirst($acte->sexe_enfant) }}</p>
+                        </div>
+                        <div>
                             <p class="text-sm font-medium text-gray-500">Date de naissance</p>
                             <p class="text-lg font-semibold text-gray-900">{{ $acte->date_naissance->format('d/m/Y') }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Heure de naissance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->heure_de_naissance }}</p>
                         </div>
                         <div>
                             <p class="text-sm font-medium text-gray-500">Lieu de naissance</p>
@@ -41,16 +49,212 @@
                             <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_et_prenom_mere }}</p>
                         </div>
                         <div>
+                            <p class="text-sm font-medium text-gray-500">Date de déclaration</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_declaration_naissance->format('d/m/Y') }}</p>
+                        </div>
+                        <div>
                             <p class="text-sm font-medium text-gray-500">Numéro de registre</p>
                             <p class="text-lg font-semibold text-orange-600">{{ $acte->numero_registre }}</p>
                         </div>
                     </div>
+
                 @elseif($type == 'mariage')
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="md:col-span-2">
+                            <p class="text-sm font-medium text-gray-500">Numéro de registre</p>
+                            <p class="text-lg font-semibold text-orange-600">{{ $acte->numero_registre }}</p>
+                        </div>
+
+                        <div class="md:col-span-2 border-t pt-4 mt-2">
+                            <h4 class="font-medium text-gray-700 mb-2">Informations sur l'époux</h4>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Nom complet</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_epoux }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Date de naissance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_naissance_epoux->format('d/m/Y') }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Lieu de naissance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->lieu_naissance_epoux }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Profession</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->epoux_profession }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Domicile</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->domicile_epoux }}</p>
+                        </div>
+
+                        <div class="md:col-span-2 border-t pt-4 mt-2">
+                            <h4 class="font-medium text-gray-700 mb-2">Informations sur l'épouse</h4>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Nom complet</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_epouse }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Date de naissance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_naissance_epouse->format('d/m/Y') }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Lieu de naissance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->lieu_naissance_epouse }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Profession</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->epouse_profession }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Domicile</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->domicile_epouse }}</p>
+                        </div>
+
+                        <div class="md:col-span-2 border-t pt-4 mt-2">
+                            <h4 class="font-medium text-gray-700 mb-2">Informations sur le mariage</h4>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Date du mariage</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_mariage->format('d/m/Y') }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Heure du mariage</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->heure_mariage ?? 'Non précisée' }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Lieu du mariage</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->lieu_mariage }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Régime matrimonial</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->type_regime }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Date de déclaration</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_declaration_mariage }}</p>
+                        </div>
+                    </div>
 
                 @elseif($type == 'deces')
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="md:col-span-2">
+                            <p class="text-sm font-medium text-gray-500">Numéro de registre</p>
+                            <p class="text-lg font-semibold text-orange-600">{{ $acte->numero_registre }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Nom du défunt</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_defunt }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Sexe</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ ucfirst($acte->sexe_defunt) }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Date de décès</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_deces->format('d/m/Y') }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Heure de décès</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->heure_deces }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Lieu de décès</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->lieu_deces }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Date de naissance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_de_naissance_du_defunt->format('d/m/Y') }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Lieu de naissance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->lieu_de_naissance_du_defunt }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Dernier domicile</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->defunt_domicile }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Nom du père</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_pere_defunt }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Nom de la mère</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_mere_defunt }}</p>
+                        </div>
+                        @if($acte->nom_dernier_conjoint)
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Dernier conjoint</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_dernier_conjoint }} {{ $acte->prenom_dernier_conjoint }}</p>
+                        </div>
+                        @endif
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Date de délivrance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_de_delivrance_deces->format('d/m/Y') }}</p>
+                        </div>
+                    </div>
 
                 @elseif($type == 'divorce')
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="md:col-span-2">
+                            <p class="text-sm font-medium text-gray-500">Numéro de registre</p>
+                            <p class="text-lg font-semibold text-orange-600">{{ $acte->numero_registre }}</p>
+                        </div>
 
+                        <div class="md:col-span-2 border-t pt-4 mt-2">
+                            <h4 class="font-medium text-gray-700 mb-2">Informations sur l'ex-conjoint</h4>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Nom complet</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_ex_conjoint }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Date de naissance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_naissance_ex_conjoint->format('d/m/Y') }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Lieu de naissance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->lieu_naissance_ex_conjoint }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Domicile</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->domicile_ex_conjoint }}</p>
+                        </div>
+
+                        <div class="md:col-span-2 border-t pt-4 mt-2">
+                            <h4 class="font-medium text-gray-700 mb-2">Informations sur l'ex-conjointe</h4>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Nom complet</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->nom_ex_conjointe }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Date de naissance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_naissance_ex_conjointe->format('d/m/Y') }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Lieu de naissance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->lieu_naissance_ex_conjointe }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Domicile</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->domicile_ex_conjointe }}</p>
+                        </div>
+
+                        <div class="md:col-span-2 border-t pt-4 mt-2">
+                            <h4 class="font-medium text-gray-700 mb-2">Informations sur le divorce</h4>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Date du jugement</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_de_jugement->format('d/m/Y') }}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Date de délivrance</p>
+                            <p class="text-lg font-semibold text-gray-900">{{ $acte->date_de_delivrance_divorce->format('d/m/Y') }}</p>
+                        </div>
+                    </div>
                 @endif
             </div>
 

@@ -30,7 +30,7 @@
                         >
                             <option value="">Sélectionnez...</option>
                             <option value="wave">Wave</option>
-                            <option value="mtn_money">MYN Money</option>
+                            <option value="mtn_money">MTN Money</option>
                             <option value="orange_money">Orange Money</option>
                             <option value="moov_money">Moov Money</option>
                         </select>
