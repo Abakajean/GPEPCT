@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demande d’acte de naissance</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 py-10">
+  <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-md border-t-8 border-orange-500">
+    <h1 class="text-3xl font-bold mb-6 text-center text-green-700">Formulaire d’acte de naissance</h1>
+    <!-- Message de retour -->
+<div id="message" class="mb-4 hidden text-center font-semibold py-2 px-4 rounded"></div>
+
+    <form action="#" method="POST" class="space-y-4">
+      
+      <!-- Numéro de registre -->
+      <div> 
+        <label for="registre" class="block text-sm font-medium text-orange-600">Numéro de registre</label>
+        <input type="text" id="registre" name="registre" required class="mt-1 block w-full rounded-md border border-gray-300 p-2 focus:ring-green-500 focus:border-green-500" />
+      </div>
+
+      <!-- Nom de l’enfant -->
+      <div> 
+        <label for="nom_enfant" class="block text-sm font-medium text-orange-600">Nom de l’enfant</label>
+        <input type="text" id="nom_enfant" name="nom_enfant" required class="mt-1 block w-full rounded-md border border-gray-300 p-2" />
+      </div>
+
+      <!-- Prénoms de l’enfant -->
+      <div>
+        <label for="prenoms_enfant" class="block text-sm font-medium text-orange-600">Prénoms de l’enfant</label>
+        <input type="text" id="prenoms_enfant" name="prenoms_enfant" required class="mt-1 block w-full rounded-md border border-gray-300 p-2" />
+      </div>
+
+      <!-- Sexe -->
+      <div>
+        <label for="sexe" class="block text-sm font-medium text-orange-600">Sexe</label>
+        <select id="sexe" name="sexe" required class="mt-1 block w-full rounded-md border border-gray-300 p-2">
+          <option value="">-- Sélectionner --</option>
+          <option value="M">Masculin</option>
+          <option value="F">Féminin</option>
+        </select>
+      </div>
+
+      <!-- Date de naissance -->
+      <div>
+        <label for="date_naissance" class="block text-sm font-medium text-orange-600">Date de naissance</label>
+        <input type="text" id="date_naissance" name="date_naissance" required class="mt-1 block w-full rounded-md border border-gray-300 p-2" />
+      </div>
+
+      <!-- Heure de naissance -->
+      <div>
+        <label for="heure_naissance" class="block text-sm font-medium text-orange-600">Heure de naissance</label>
+        <input type="text" id="heure_naissance" name="heure_naissance" required class="mt-1 block w-full rounded-md border border-gray-300 p-2" />
+      </div>
+      
+      <!-- Lieu de naissance -->
+      <div>
+        <label for="lieu_naissance" class="block text-sm font-medium text-orange-600">Lieu de naissance</label>
+        <input type="text" id="lieu_naissance" name="lieu_naissance" required class="mt-1 block w-full rounded-md border border-gray-300 p-2" />
+      </div>
+
+      <!-- Nom et prénoms du père -->
+      <div>
+        <label for="nom_pere" class="block text-sm font-medium text-orange-600">Nom et prénoms du père</label>
+        <input type="text" id="nom_pere" name="nom_pere" required class="mt-1 block w-full rounded-md border border-gray-300 p-2" />
+      </div>
+
+      <!-- Nom et prénoms de la mère -->
+      <div>
+        <label for="nom_mere" class="block text-sm font-medium text-orange-600">Nom et prénoms de la mère</label>
+        <input type="text" id="nom_mere" name="nom_mere" required class="mt-1 block w-full rounded-md border border-gray-300 p-2" />
+      </div>
+
+      <!-- Date de délivrance -->
+      <div>
+        <label for="date_delivrance" class="block text-sm font-medium text-orange-600">Date de délivrance</label>
+        <input type="date" id="date_delivrance" name="date_delivrance" required class="mt-1 block w-full rounded-md border border-gray-300 p-2" />
+      </div>
+
+       <!-- Bouton de soumission -->
+      <div class="md:col-span-2 text-center pt-4">
+        <button type="submit" class="bg-green-700 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full transition">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+   <!-- 🔽 SCRIPTS JAVASCRIPT -->
+  <script>
+    // Simule des actes existants (à remplacer par l’API réelle plus tard)
+    const actes = [
+      {
+       
+      }
+    ];
+
+    // 🔹 Mode édition auto selon l'URL
+    function activerModeEdition() {
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get("id"));
+      if (!id) return;
+
+      const acte = actes.find(a => a.id === id);
+      if (!acte) return alert("Acte introuvable.");
+
+      document.querySelector("h1").textContent = "Modifier un acte de mariage";
+      document.querySelector("button[type='submit']").textContent = "Enregistrer les modifications";
+
+      for (const [cle, valeur] of Object.entries(acte)) {
+        const champ = document.getElementById(cle);
+        if (champ) champ.value = valeur;
+      }
+    }
+
+    // 🔸 Message de succès / échec
+    function afficherMessage(type, texte) {
+      const msg = document.getElementById("message");
+      msg.textContent = texte;
+      msg.classList.remove("hidden");
+
+      msg.className = type === "succès"
+        ? "mb-4 text-green-700 bg-green-100 border border-green-500 text-center font-semibold py-2 px-4 rounded"
+        : "mb-4 text-red-700 bg-red-100 border border-red-500 text-center font-semibold py-2 px-4 rounded";
+
+      setTimeout(() => msg.classList.add("hidden"), 4000);
+    }
+
+    // 🔹 Événement sur soumission
+    document.getElementById("formMariage").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const succes = true; // simulation
+      afficherMessage(succes ? "succès" : "erreur", succes ? "Acte de mariage enregistré avec succès !" : "Erreur lors de l’enregistrement.");
+    });
+
+    // 🔄 Lancer mode édition au chargement
+    window.onload = activerModeEdition;
+  </script>
+</body>
+</html>

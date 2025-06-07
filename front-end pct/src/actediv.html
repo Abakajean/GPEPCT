@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demande d’acte de divorce</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 py-10">
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-md border-t-8 border-orange-500">
+    <h1 class="text-3xl font-bold text-center mb-8 text-green-700">Formulaire d’Acte de Divorce</h1>
+    <!-- Message de retour -->
+    <div id="message" class="mb-4 hidden text-center font-semibold py-2 px-4 rounded"></div>
+
+    <form action="#" method="POST" class="space-y-4">
+      <!-- Numéro de registre -->
+      <div>
+        <label for="numero_registre" class="block text-sm font-semibold text-orange-600">Numéro de registre</label>
+        <input type="text" id="numero_registre" name="numero_registre" class="mt-1 w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-orange-600 focus:border-orange-600" required>
+      </div>
+
+      <!-- ex-conjoint -->
+      <div class="pt-4">
+        <h2 class="text-lg font-semibold text-green-700">Informations sur l’ex-conjoint</h2>
+      </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Nom ex-conjoint -->
+      <div>
+        <label for="nom_ex_conjoint" class="block text-sm font-semibold text-orange-600">Nom de l’ex-conjoint</label>
+        <input type="text" id="nom_ex_conjoint" name="nom_ex_conjoint" class="mt-1 w-full rounded-md border border-gray-300 p-2" required>
+      </div>
+
+       <!-- Date naissance ex-conjoint -->
+       <div>
+        <label for="date_naissance_ex_conjoint" class="block text-sm font-semibold text-orange-600">Date de naissance (ex-conjoint)</label>
+        <input type="text" id="date_naissance_ex_conjoint" name="date_naissance_ex_conjoint" class="mt-1 w-full rounded-md border border-gray-300 p-2" required>
+      </div>
+
+      <!-- Lieu naissance ex-conjoint -->
+      <div>
+        <label for="lieu_naissance_ex_conjoint" class="block text-sm font-semibold text-orange-600">Lieu de naissance (ex-conjoint)</label>
+        <input type="text" id="lieu_naissance_ex_conjoint" name="lieu_naissance_ex_conjoint" class="mt-1 w-full rounded-md border border-gray-300 p-2" required>
+      </div>
+
+      <!-- Domicile ex-conjoint -->
+      <div>
+        <label for="domicile_ex_conjoint" class="block text-sm font-semibold text-orange-600">Domicile (ex-conjoint)</label>
+        <input type="text" id="domicile_ex_conjoint" name="domicile_ex_conjoint" class="mt-1 w-full rounded-md border border-gray-300 p-2" required>
+      </div>
+    </div>
+
+    <!-- ex-conjointe -->
+    <div class="pt-4">
+      <h2 class="text-lg font-semibold text-green-700">Informations sur l’ex-conjointe</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Nom ex-conjointe -->
+      <div>
+        <label for="nom_ex_conjointe" class="block text-sm font-semibold text-orange-600">Nom de l’ex-conjointe</label>
+        <input type="text" id="nom_ex_conjointe" name="nom_ex_conjointe" class="mt-1 w-full rounded-md border border-gray-300 p-2" required>
+      </div>
+     
+      <!-- Date naissance ex-conjointe -->
+      <div>
+        <label for="date_naissance_ex_conjointe" class="block text-sm font-semibold text-orange-600">Date de naissance (ex-conjointe)</label>
+        <input type="text" id="date_naissance_ex_conjointe" name="date_naissance_ex_conjointe" class="mt-1 w-full rounded-md border border-gray-300 p-2" required>
+      </div>
+
+      <!-- Lieu naissance ex-conjointe -->
+      <div>
+        <label for="lieu_naissance_ex_conjointe" class="block text-sm font-semibold text-orange-600">Lieu de naissance (ex-conjointe)</label>
+        <input type="text" id="lieu_naissance_ex_conjointe" name="lieu_naissance_ex_conjointe" class="mt-1 w-full rounded-md border border-gray-300 p-2" required>
+      </div>
+
+      <!-- Domicile ex-conjointe -->
+      <div>
+        <label for="domicile_ex_conjointe" class="block text-sm font-semibold text-orange-600">Domicile (ex-conjointe)</label>
+        <input type="text" id="domicile_ex_conjointe" name="domicile_ex_conjointe" class="mt-1 w-full rounded-md border border-gray-300 p-2" required>
+      </div>
+    </div>
+
+    <hr class="my-6 border-t-2 border-orange-500">
+    
+      <!-- Date de jugement -->
+      <div>
+        <label for="date_jugement" class="block text-sm font-semibold text-orange-600">Date du jugement</label>
+        <input type="text" id="date_jugement" name="date_jugement" class="mt-1 w-full rounded-md border border-gray-300 p-2" required>
+      </div>
+
+      <!-- Date de délivrance -->
+      <div>
+        <label for="date_delivrance" class="block text-sm font-semibold text-orange-600">Date de délivrance de l’acte</label>
+        <input type="date" id="date_delivrance" name="date_delivrance" class="mt-1 w-full rounded-md border border-gray-300 p-2" required>
+      </div>
+
+      <!-- Bouton de soumission -->
+      <div class="md:col-span-2 text-center pt-4">
+        <button type="submit" class="bg-green-700 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full transition">Enregistrer</button>
+      </div>
+    </form>
+    </div>
+</body>
+</html>
+        
