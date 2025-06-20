@@ -10,30 +10,23 @@ class ActeDeces extends Model
     use HasFactory;
 
     protected $casts = [
-        'date_deces' => 'datetime',
-        'date_de_delivrance_deces' => 'datetime',
-        'date_de_naissance_du_defunt' => 'datetime',
+        'date_dec' => 'datetime',
     ];
 
     protected $fillable = [
-        'numero_registre',
-        'nom_defunt',
-        'date_deces',
-        'heure_deces',
-        'lieu_deces',
-        // 'cause_deces',
-        'date_de_naissance_du_defunt',
-        'lieu_de_naissance_du_defunt',
-        'sexe_defunt',
-        'nom_dernier_conjoint',
-        'prenom_dernier_conjoint',
-        'nom_pere_defunt',
-        'nom_mere_defunt',
-        // 'declarant_nom',
-        // 'declarant_profession',
-        'defunt_domicile',
-        'date_de_delivrance_deces',
+        'num_reg_dec',
+        'nom_def',
+        'date_dec',
+        'h_dec',
+        'lieu_dec',
+        'lieu_nais_def',
+        'sexe_def',
+        'nom_der_conj',
+        'pnom_der_conj',
+        'nom_p_def',
+        'nom_m_def',
+        'dom_def',
     ];
 
-    protected $dates = ['date_deces'];
+protected $table = 'deces';
 }

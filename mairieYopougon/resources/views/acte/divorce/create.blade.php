@@ -17,11 +17,11 @@
                     <!-- Numéro de registre -->
                     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                         <div>
-                            <label for="numero_registre" class="block text-sm font-medium text-gray-700">Numéro de registre</label>
-                            <input type="text" id="numero_registre" name="numero_registre" value="{{ old('numero_registre') }}" 
+                            <label for="num_reg_div" class="block text-sm font-medium text-gray-700">Numéro de registre</label>
+                            <input type="text" id="num_reg_div" name="num_reg_div" value="{{ old('num_reg_div') }}" 
                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" 
                                    required maxlength="5" pattern="[0-9]{5}" title="5 chiffres requis">
-                            @error('numero_registre')
+                            @error('num_reg_div')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
@@ -32,37 +32,37 @@
                         <h2 class="text-lg font-medium text-orange-600 mb-4">Informations sur l'ex-conjoint</h2>
                         <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                             <div>
-                                <label for="nom_ex_conjoint" class="block text-sm font-medium text-gray-700">Nom complet</label>
-                                <input type="text" id="nom_ex_conjoint" name="nom_ex_conjoint" value="{{ old('nom_ex_conjoint') }}" 
+                                <label for="nom_exconj" class="block text-sm font-medium text-gray-700">Nom complet</label>
+                                <input type="text" id="nom_exconj" name="nom_exconj" value="{{ old('nom_exconj') }}" 
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
-                                @error('nom_ex_conjoint')
+                                @error('nom_exconj')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <div>
-                                <label for="date_naissance_ex_conjoint" class="block text-sm font-medium text-gray-700">Date de naissance</label>
-                                <input type="date" id="date_naissance_ex_conjoint" name="date_naissance_ex_conjoint" value="{{ old('date_naissance_ex_conjoint') }}" 
+                                <label for="date_nais_exconj" class="block text-sm font-medium text-gray-700">Date de naissance</label>
+                                <input type="date" id="date_nais_exconj" name="date_nais_exconj" value="{{ old('date_nais_exconj') }}" 
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
-                                @error('date_naissance_ex_conjoint')
+                                @error('date_nais_exconj')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <div>
-                                <label for="lieu_naissance_ex_conjoint" class="block text-sm font-medium text-gray-700">Lieu de naissance</label>
-                                <input type="text" id="lieu_naissance_ex_conjoint" name="lieu_naissance_ex_conjoint" value="{{ old('lieu_naissance_ex_conjoint') }}" 
+                                <label for="lieu_nais_exconj" class="block text-sm font-medium text-gray-700">Lieu de naissance</label>
+                                <input type="text" id="lieu_nais_exconj" name="lieu_nais_exconj" value="{{ old('lieu_nais_exconj') }}" 
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
-                                @error('lieu_naissance_ex_conjoint')
+                                @error('lieu_nais_exconj')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <div>
-                                <label for="domicile_ex_conjoint" class="block text-sm font-medium text-gray-700">Domicile</label>
-                                <input type="text" id="domicile_ex_conjoint" name="domicile_ex_conjoint" value="{{ old('domicile_ex_conjoint') }}" 
+                                <label for="dom_exconj" class="block text-sm font-medium text-gray-700">Domicile</label>
+                                <input type="text" id="dom_exconj" name="dom_exconj" value="{{ old('dom_exconj') }}" 
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
-                                @error('domicile_ex_conjoint')
+                                @error('dom_exconj')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
@@ -74,37 +74,37 @@
                         <h2 class="text-lg font-medium text-orange-600 mb-4">Informations sur l'ex-conjointe</h2>
                         <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                             <div>
-                                <label for="nom_ex_conjointe" class="block text-sm font-medium text-gray-700">Nom complet</label>
-                                <input type="text" id="nom_ex_conjointe" name="nom_ex_conjointe" value="{{ old('nom_ex_conjointe') }}" 
+                                <label for="nom_exconjte" class="block text-sm font-medium text-gray-700">Nom complet</label>
+                                <input type="text" id="nom_exconjte" name="nom_exconjte" value="{{ old('nom_exconjte') }}" 
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
-                                @error('nom_ex_conjointe')
+                                @error('nom_exconjte')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <div>
-                                <label for="date_naissance_ex_conjointe" class="block text-sm font-medium text-gray-700">Date de naissance</label>
-                                <input type="date" id="date_naissance_ex_conjointe" name="date_naissance_ex_conjointe" value="{{ old('date_naissance_ex_conjointe') }}" 
+                                <label for="date_nais_exconjte" class="block text-sm font-medium text-gray-700">Date de naissance</label>
+                                <input type="date" id="date_nais_exconjte" name="date_nais_exconjte" value="{{ old('date_nais_exconjte') }}" 
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
-                                @error('date_naissance_ex_conjointe')
+                                @error('date_nais_exconjte')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <div>
-                                <label for="lieu_naissance_ex_conjointe" class="block text-sm font-medium text-gray-700">Lieu de naissance</label>
-                                <input type="text" id="lieu_naissance_ex_conjointe" name="lieu_naissance_ex_conjointe" value="{{ old('lieu_naissance_ex_conjointe') }}" 
+                                <label for="lieu_nais_exconjte" class="block text-sm font-medium text-gray-700">Lieu de naissance</label>
+                                <input type="text" id="lieu_nais_exconjte" name="lieu_nais_exconjte" value="{{ old('lieu_nais_exconjte') }}" 
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
-                                @error('lieu_naissance_ex_conjointe')
+                                @error('lieu_nais_exconjte')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <div>
-                                <label for="domicile_ex_conjointe" class="block text-sm font-medium text-gray-700">Domicile</label>
-                                <input type="text" id="domicile_ex_conjointe" name="domicile_ex_conjointe" value="{{ old('domicile_ex_conjointe') }}" 
+                                <label for="dom_exconjte" class="block text-sm font-medium text-gray-700">Domicile</label>
+                                <input type="text" id="dom_exconjte" name="dom_exconjte" value="{{ old('dom_exconjte') }}" 
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
-                                @error('domicile_ex_conjointe')
+                                @error('dom_exconjte')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
@@ -116,19 +116,10 @@
                         <h2 class="text-lg font-medium text-orange-600 mb-4">Informations sur le jugement</h2>
                         <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                             <div>
-                                <label for="date_de_jugement" class="block text-sm font-medium text-gray-700">Date du jugement</label>
-                                <input type="date" id="date_de_jugement" name="date_de_jugement" value="{{ old('date_de_jugement') }}" 
+                                <label for="date_jug" class="block text-sm font-medium text-gray-700">Date du jugement</label>
+                                <input type="date" id="date_jug" name="date_jug" value="{{ old('date_jug') }}" 
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
-                                @error('date_de_jugement')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="date_de_delivrance_divorce" class="block text-sm font-medium text-gray-700">Date de delivrance du divorce</label>
-                                <input type="date" id="date_de_delivrance_divorce" name="date_de_delivrance_divorce" value="{{ old('date_de_delivrance_divorce') }}" 
-                                       class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
-                                @error('date_de_delivrance_divorce')
+                                @error('date_jug')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>

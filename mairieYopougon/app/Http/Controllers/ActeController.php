@@ -30,20 +30,15 @@ class ActeController extends Controller
     public function naissanceStore(Request $request)
     {
         $validated = $request->validate([
-            'numero_registre' => 'required|string|size:5|unique:acte_naissances',
-            'nom_enfant' => 'required|string|max:255',
-            'prenom_enfant' => 'required|string|max:255',
-            'sexe_enfant' => 'required|in:masculin,féminin',
-            'date_naissance' => 'required|date',
-            'lieu_naissance' => 'required|string|max:255',
-            'heure_de_naissance' => 'required|date_format:H:i',
-            'nom_et_prenom_pere' => 'required|string|max:255',
-            // 'pere_profession' => 'required|string|max:255',
-            // 'pere_domicile' => 'required|string|max:255',
-            'nom_et_prenom_mere' => 'required|string|max:255',
-            // 'mere_profession' => 'required|string|max:255',
-            // 'mere_domicile' => 'required|string|max:255',
-            'date_declaration_naissance' => 'required|date',
+            'num_reg_nais' => 'required|string|size:5|unique:naissance',
+            'nom_enf' => 'required|string|max:255',
+            'pnom_enf' => 'required|string|max:255',
+            'sexe_enf' => 'required|in:masculin,féminin',
+            'date_nais' => 'required|date',
+            'lieu_nais' => 'required|string|max:255',
+            'h_nais_enf' => 'required|date_format:H:i',
+            'nom_pnom_pere' => 'required|string|max:255',
+            'nom_pnom_mere' => 'required|string|max:255',
         ]);
 
         ActeNaissance::create($validated);
@@ -59,20 +54,15 @@ class ActeController extends Controller
     public function naissanceUpdate(Request $request, ActeNaissance $acte)
     {
         $validated = $request->validate([
-            'numero_registre' => 'required|string|size:5|unique:acte_naissances,numero_registre,' . $acte->id,
-            'nom_enfant' => 'required|string|max:255',
-            'prenom_enfant' => 'required|string|max:255',
-            'sexe_enfant' => 'required|in:masculin,féminin',
-            'date_naissance' => 'required|date',
-            'lieu_naissance' => 'required|string|max:255',
-            'heure_de_naissance' => 'required|date_format:H:i',
-            'nom_et_prenom_pere' => 'required|string|max:255',
-            // 'pere_profession' => 'required|string|max:255',
-            // 'pere_domicile' => 'required|string|max:255',
-            'nom_et_prenom_mere' => 'required|string|max:255',
-            // 'mere_profession' => 'required|string|max:255',
-            // 'mere_domicile' => 'required|string|max:255',
-            'date_declaration_naissance' => 'required|date',
+            'num_reg_nais' => 'required|string|size:5|unique:naissance,num_reg_nais,' . $acte->id,
+            'nom_enf' => 'required|string|max:255',
+            'pnom_enf' => 'required|string|max:255',
+            'sexe_enf' => 'required|in:masculin,féminin',
+            'date_nais' => 'required|date',
+            'lieu_nais' => 'required|string|max:255',
+            'h_nais_enf' => 'required|date_format:H:i',
+            'nom_pnom_pere' => 'required|string|max:255',
+            'nom_pnom_mere' => 'required|string|max:255',
         ]);
 
         $acte->update($validated);
@@ -101,43 +91,24 @@ class ActeController extends Controller
     public function mariageStore(Request $request)
     {
         $validated = $request->validate([
-            'numero_registre' => 'required|string|size:5|unique:acte_mariages',
-            'nom_epoux' => 'required|string|max:255',
-            'epoux_profession' => 'required|string|max:255',
-            'domicile_epoux' => 'required|string|max:255',
-            'date_naissance_epoux' => 'required|date',
-            'lieu_naissance_epoux' => 'required|string|max:255',
-            // 'epoux_nationalite' => 'required|string|max:255',
+            'num_reg_mar' => 'required|string|size:5|unique:mariage',
+            'nom_ep' => 'required|string|max:255',
+            'Nom_pere_ep' => 'required|string|max:255',
+            'nom_m_ep' => 'required|string|max:255',
+            'date_nais_ep' => 'required|date',
+            'lieu_nais_ep' => 'required|string|max:255',
+            'dom_ep' => 'required|string|max:255',
 
-            // 'nom_pere_epoux' => 'required|string|max:255',
-            // 'pere_profession' => 'required|string|max:255',
-            // 'domicile_pere' => 'required|string|max:255',
-            // 'nom_mere_epoux' => 'required|string|max:255',
-            // 'mere_profession' => 'required|string|max:255',
-            // 'domicile_mere' => 'required|string|max:255',
+            'nom_eps' => 'required|string|max:255',
+            'nom_p_eps' => 'required|string|max:255',
+            'nom_m_eps' => 'required|string|max:255',
+            'date_nais_eps' => 'required|date',
+            'lieu_nais_eps' => 'required|string|max:255',
+            'dom_eps' => 'required|string|max:255',
 
-            'nom_epouse' => 'required|string|max:255',
-            'epouse_profession' => 'required|string|max:255',
-            'domicile_epouse' => 'required|string|max:255',
-            'date_naissance_epouse' => 'required|date',
-            'lieu_naissance_epouse' => 'required|string|max:255',
-            // 'nom_pere_epouse' => 'required|string|max:255',
-            // 'nom_mere_epouse' => 'required|string|max:255',
-            // 'epouse_nationalite' => 'required|string|max:255',
-
-            'date_mariage' => 'required|date',
-            'heure_mariage' => 'nullable',
-            'lieu_mariage' => 'required|string|max:255',
-            'type_regime' => 'required|string|',
-
-            // 'temoin_epoux_nom' => 'required|string|max:255',
-            // 'temoin_epoux_profession' => 'required|string|max:255',
-            // 'temoin_epoux_domicile' => 'required|string|max:255',
-
-            // 'temoin_epouse_nom' => 'required|string|max:255',
-            // 'temoin_epouse_profession' => 'required|string|max:255',
-            // 'temoin_epouse_domicile' => 'required|string|max:255',
-            'date_declaration_mariage' => 'required|date',
+            'date_mar' => 'required|date',
+            'h_mar' => 'nullable',
+            'type_reg' => 'required|string|',
         ]);
 
         ActeMariage::create($validated);
@@ -153,44 +124,25 @@ class ActeController extends Controller
     public function mariageUpdate(Request $request, ActeMariage $acte)
     {
         $validated = $request->validate([
-            'numero_registre' => 'required|string|size:5|unique:acte_mariages,numero_registre,' . $acte->id,
+            'num_reg_mar' => 'required|string|size:5|unique:mariage,num_reg_mar,' . $acte->id,
 
-            'nom_epoux' => 'required|string|max:255',
-            'epoux_profession' => 'required|string|max:255',
-            'domicile_epoux' => 'required|string|max:255',
-            'date_naissance_epoux' => 'required|date',
-            'lieu_naissance_epoux' => 'required|string|max:255',
-            // 'epoux_nationalite' => 'required|string|max:255',
+            'nom_ep' => 'required|string|max:255',
+            'Nom_pere_ep' => 'required|string|max:255',
+            'nom_m_ep' => 'required|string|max:255',
+            'date_nais_ep' => 'required|date',
+            'lieu_nais_ep' => 'required|string|max:255',
+            'dom_ep' => 'required|string|max:255',
 
-            'nom_pere_epoux' => 'required|string|max:255',
-            'pere_profession' => 'required|string|max:255',
-            'domicile_pere' => 'required|string|max:255',
-            'nom_mere_epoux' => 'required|string|max:255',
-            'mere_profession' => 'required|string|max:255',
-            'domicile_mere' => 'required|string|max:255',
+            'nom_eps' => 'required|string|max:255',
+            'nom_p_eps' => 'required|string|max:255',
+            'nom_m_eps' => 'required|string|max:255',
+            'date_nais_eps' => 'required|date',
+            'lieu_nais_eps' => 'required|string|max:255',
+            'dom_eps' => 'required|string|max:255',
 
-            'nom_epouse' => 'required|string|max:255',
-            'epouse_profession' => 'required|string|max:255',
-            'domicile_epouse' => 'required|string|max:255',
-            'date_naissance_epouse' => 'required|date',
-            'lieu_naissance_epouse' => 'required|string|max:255',
-            'nom_pere_epouse' => 'required|string|max:255',
-            'nom_mere_epouse' => 'required|string|max:255',
-            // 'epouse_nationalite' => 'required|string|max:255',
-
-            'date_mariage' => 'required|date',
-            'heure_mariage' => 'nullable',
-            'lieu_mariage' => 'required|string|max:255',
-            'type_regime' => 'required|string',
-
-            // 'temoin_epoux_nom' => 'required|string|max:255',
-            // 'temoin_epoux_profession' => 'required|string|max:255',
-            // 'temoin_epoux_domicile' => 'required|string|max:255',
-
-            // 'temoin_epouse_nom' => 'required|string|max:255',
-            // 'temoin_epouse_profession' => 'required|string|max:255',
-            // 'temoin_epouse_domicile' => 'required|string|max:255',
-            'date_declaration_mariage' => 'required|date',
+            'date_mar' => 'required|date',
+            'h_mar' => 'nullable',
+            'type_reg' => 'required|string',
         ]);
 
         $acte->update($validated);
@@ -219,20 +171,16 @@ class ActeController extends Controller
     public function divorceStore(Request $request)
     {
         $validated = $request->validate([
-            'numero_registre' => 'required|string|size:5|unique:acte_divorces',
-            'nom_ex_conjoint' => 'required|string|max:255',
-            'date_naissance_ex_conjoint' => 'required|date',
-            'lieu_naissance_ex_conjoint' => 'required|string|max:255',
-            'domicile_ex_conjoint' => 'required|string|max:255',
-
-            'nom_ex_conjointe' => 'required|string|max:255',
-            'date_naissance_ex_conjointe' => 'required|date',
-            'lieu_naissance_ex_conjointe' => 'required|string|max:255',
-            'domicile_ex_conjointe' => 'required|string|max:255',
-
-            'date_de_jugement' => 'required|date',
-            // 'lieu_de_jugement' => 'required|string|max:255',
-            'date_de_delivrance_divorce' => 'required|date',
+            'num_reg_div' => 'required|string|size:5|unique:divorce',
+            'nom_exconj' => 'required|string|max:255',
+            'date_nais_exconj' => 'required|date',
+            'lieu_nais_exconj' => 'required|string|max:255',
+            'dom_exconj' => 'required|string|max:255',
+            'nom_exconjte' => 'required|string|max:255',
+            'date_nais_exconjte' => 'required|date',
+            'lieu_nais_exconjte' => 'required|string|max:255',
+            'dom_exconjte' => 'required|string|max:255',
+            'date_jug' => 'required|date',
         ]);
 
         ActeDivorce::create($validated);
@@ -248,18 +196,16 @@ class ActeController extends Controller
     public function divorceUpdate(Request $request, ActeDivorce $acte)
     {
         $validated = $request->validate([
-            'numero_registre' => 'required|string|size:5|unique:acte_divorces,numero_registre,'.$acte->id,
-            'nom_ex_conjoint' => 'required|string|max:255',
-            'date_naissance_ex_conjoint' => 'required|date',
-            'lieu_naissance_ex_conjoint' => 'required|string|max:255',
-            'domicile_ex_conjoint' => 'required|string|max:255',
-            'nom_ex_conjointe' => 'required|string|max:255',
-            'date_naissance_ex_conjointe' => 'required|date',
-            'lieu_naissance_ex_conjointe' => 'required|string|max:255',
-            'domicile_ex_conjointe' => 'required|string|max:255',
-            'date_de_jugement' => 'required|date',
-            // 'lieu_de_jugement' => 'required|string|max:255',
-            'date_de_delivrance_divorce' => 'required|date',
+            'num_reg_div' => 'required|string|size:5|unique:divorce,num_reg_div,'.$acte->id,
+            'nom_exconj' => 'required|string|max:255',
+            'date_nais_exconj' => 'required|date',
+            'lieu_nais_exconj' => 'required|string|max:255',
+            'dom_exconj' => 'required|string|max:255',
+            'nom_exconjte' => 'required|string|max:255',
+            'date_nais_exconjte' => 'required|date',
+            'lieu_nais_exconjte' => 'required|string|max:255',
+            'dom_exconjte' => 'required|string|max:255',
+            'date_jug' => 'required|date',
         ]);
 
         $acte->update($validated);
@@ -288,23 +234,18 @@ class ActeController extends Controller
     public function decesStore(Request $request)
     {
         $validated = $request->validate([
-            'numero_registre' => 'required|string|size:5|unique:acte_deces',
-            'nom_defunt' => 'required|string|max:255',
-            'date_deces' => 'required|date',
-            'heure_deces' => 'required|date_format:H:i',
-            'lieu_deces' => 'required|string|max:255',
-            // 'cause_deces' => 'required|string|max:255',
-            'date_de_naissance_du_defunt' => 'required|date',
-            'lieu_de_naissance_du_defunt' => 'required|string|max:255',
-            'sexe_defunt' => 'required|in:masculin,féminin',
-            'nom_dernier_conjoint' => 'required|string|max:255',
-            'prenom_dernier_conjoint' => 'required|string|max:255',
-            'nom_pere_defunt' => 'required|string|max:255',
-            'nom_mere_defunt' => 'required|string|max:255',
-            // 'declarant_nom' => 'required|string|max:255',
-            // 'declarant_profession' => 'required|string|max:255',
-            'defunt_domicile' => 'required|string|max:255',
-            'date_de_delivrance_deces' => 'required|date',
+            'num_reg_dec' => 'required|string|size:5|unique:deces',
+            'nom_def' => 'required|string|max:255',
+            'date_dec' => 'required|date',
+            'h_dec' => 'required|date_format:H:i',
+            'lieu_dec' => 'required|string|max:255',
+            'lieu_nais_def' => 'required|string|max:255',
+            'sexe_def' => 'required|in:masculin,féminin',
+            'nom_der_conj' => 'required|string|max:255',
+            'pnom_der_conj' => 'required|string|max:255',
+            'nom_p_def' => 'required|string|max:255',
+            'nom_m_def' => 'required|string|max:255',
+            'dom_def' => 'required|string|max:255',
         ]);
 
         ActeDeces::create($validated);
@@ -320,24 +261,18 @@ class ActeController extends Controller
     public function decesUpdate(Request $request, ActeDeces $acte)
     {
         $validated = $request->validate([
-            'numero_registre' => 'required|string|size:5|unique:acte_deces,numero_registre,' . $acte->id,
-            'nom_defunt' => 'required|string|max:255',
-            'date_deces' => 'required|date',
-            'heure_deces' => 'required|date_format:H:i',
-            'lieu_deces' => 'required|string|max:255',
-            'cause_deces' => 'required|string|max:255',
-            'date_de_naissance_du_defunt' => 'required|date',
-            'lieu_de_naissance_du_defunt' => 'required|string|max:255',
-            'sexe_defunt' => 'required|in:masculin,féminin',
-            'nom_dernier_conjoint' => 'required|string|max:255',
-            'prenom_dernier_conjoint' => 'required|string|max:255',
-            'nom_pere_defunt' => 'required|string|max:255',
-            'nom_mere_defunt' => 'required|string|max:255',
-            // 'declarant_nom' => 'required|string|max:255',
-            // 'declarant_prenom' => 'required|string|max:255',
-            // 'declarant_profession' => 'required|string|max:255',
-            'defunt_domicile' => 'required|string|max:255',
-            'date_de_delivrance_deces' => 'required|date',
+            'num_reg_dec' => 'required|string|size:5|unique:deces,num_reg_dec,' . $acte->id,
+            'nom_def' => 'required|string|max:255',
+            'date_dec' => 'required|date',
+            'h_dec' => 'required|date_format:H:i',
+            'lieu_dec' => 'required|string|max:255',
+            'lieu_nais_def' => 'required|string|max:255',
+            'sexe_def' => 'required|in:masculin,féminin',
+            'nom_der_conj' => 'required|string|max:255',
+            'pnom_der_conj' => 'required|string|max:255',
+            'nom_p_def' => 'required|string|max:255',
+            'nom_m_def' => 'required|string|max:255',
+            'dom_def' => 'required|string|max:255',
         ]);
 
         $acte->update($validated);
@@ -357,16 +292,16 @@ class ActeController extends Controller
         
         switch($type) {
             case 'naissance':
-                $acte = ActeNaissance::where('numero_registre', $numero)->firstOrFail();
+                $acte = ActeNaissance::where('num_reg_nais', $numero)->firstOrFail();
                 break;
             case 'mariage':
-                $acte = ActeMariage::where('numero_registre', $numero)->firstOrFail();
+                $acte = ActeMariage::where('num_reg_mar', $numero)->firstOrFail();
                 break;
             case 'deces':
-                $acte = ActeDeces::where('numero_registre', $numero)->firstOrFail();
+                $acte = ActeDeces::where('num_reg_dec', $numero)->firstOrFail();
                 break;
             case 'divorce':
-                $acte = ActeDivorce::where('numero_registre', $numero)->firstOrFail();
+                $acte = ActeDivorce::where('num_reg_div', $numero)->firstOrFail();
                 break;
             default:
                 abort(404);

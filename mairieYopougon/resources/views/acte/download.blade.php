@@ -175,78 +175,71 @@
         <div class="acte-content">
             @if($type == 'naissance')
                 <!-- Acte de naissance -->
-                <p><span class="field-label">Numéro de registre :</span> {{ $acte->numero_registre }}</p>
+                <p><span class="field-label">Numéro de registre :</span> {{ $acte->num_reg_nais }}</p>
                 <p class="mt-4">Je soussigné(e), Officier de l'État Civil de la commune de Yopougon, certifie que :</p>
-                <p class="mt-4">L'enfant <span class="font-bold uppercase">{{ $acte->nom_enfant }} {{ $acte->prenom_enfant }}</span>,</p>
-                <p>du sexe {{ $acte->sexe_enfant }}, né(e) le {{ $acte->date_naissance->format('d/m/Y') }} à {{ $acte->heure_de_naissance }},</p>
-                <p>à {{ $acte->lieu_naissance }},</p>
-                <p class="mt-4">Fils/Fille de <span class="font-bold">{{ $acte->nom_et_prenom_pere }}</span></p>
-                <p>et de <span class="font-bold">{{ $acte->nom_et_prenom_mere }}</span>.</p>
-                <p class="mt-4">Déclaré(e) le {{ $acte->date_declaration_naissance->format('d/m/Y') }}.</p>
+                <p class="mt-4">L'enfant <span class="font-bold uppercase">{{ $acte->nom_enf }} {{ $acte->pnom_enf }}</span>,</p>
+                <p>du sexe {{ $acte->sexe_enf }}, né(e) le {{ $acte->date_nais->format('d/m/Y') }} à {{ $acte->h_nais_enf }},</p>
+                <p>à {{ $acte->lieu_nais }},</p>
+                <p class="mt-4">Fils/Fille de <span class="font-bold">{{ $acte->nom_pnom_pere }}</span></p>
+                <p>et de <span class="font-bold">{{ $acte->nom_pnom_mere }}</span>.</p>
                 
             @elseif($type == 'mariage')
                 <!-- Acte de mariage -->
-                <p><span class="field-label">Numéro de registre :</span> {{ $acte->numero_registre }}</p>
+                <p><span class="field-label">Numéro de registre :</span> {{ $acte->num_reg_mar }}</p>
                 <p class="mt-4">Je soussigné(e), Officier de l'État Civil de la commune de Yopougon, certifie que :</p>
                 
                 <p class="mt-4 font-bold">ÉPOUX :</p>
-                <p><span class="field-label">Nom et prénoms :</span> {{ $acte->nom_epoux }}</p>
-                <p><span class="field-label">Né(e) le :</span> {{ $acte->date_naissance_epoux->format('d/m/Y') }} à {{ $acte->lieu_naissance_epoux }}</p>
-                <p><span class="field-label">Profession :</span> {{ $acte->epoux_profession }}</p>
-                <p><span class="field-label">Domicile :</span> {{ $acte->domicile_epoux }}</p>
+                <p><span class="field-label">Nom et prénoms :</span> {{ $acte->nom_ep }}</p>
+                <p><span class="field-label">Né(e) le :</span> {{ $acte->date_nais_ep->format('d/m/Y') }} à {{ $acte->lieu_nais_ep }}</p>
+                <p><span class="field-label">Domicile :</span> {{ $acte->dom_ep }}</p>
                 
                 <p class="mt-4 font-bold">ÉPOUSE :</p>
-                <p><span class="field-label">Nom et prénoms :</span> {{ $acte->nom_epouse }}</p>
-                <p><span class="field-label">Né(e) le :</span> {{ $acte->date_naissance_epouse->format('d/m/Y') }} à {{ $acte->lieu_naissance_epouse }}</p>
-                <p><span class="field-label">Profession :</span> {{ $acte->epouse_profession }}</p>
-                <p><span class="field-label">Domicile :</span> {{ $acte->domicile_epouse }}</p>
+                <p><span class="field-label">Nom et prénoms :</span> {{ $acte->nom_eps }}</p>
+                <p><span class="field-label">Né(e) le :</span> {{ $acte->date_nais_eps->format('d/m/Y') }} à {{ $acte->lieu_nais_eps }}</p>
+                <p><span class="field-label">Domicile :</span> {{ $acte->dom_eps }}</p>
                 
                 <p class="mt-4 font-bold">MARIAGE :</p>
-                <p><span class="field-label">Date :</span> {{ $acte->date_mariage->format('d/m/Y') }}</p>
-                <p><span class="field-label">Heure :</span> {{ $acte->heure_mariage ?? 'Non précisée' }}</p>
-                <p><span class="field-label">Lieu :</span> {{ $acte->lieu_mariage }}</p>
-                <p><span class="field-label">Régime matrimonial :</span> {{ $acte->type_regime }}</p>
-                <p class="mt-4">Déclaré le {{ $acte->date_declaration_mariage }}.</p>
+                <p><span class="field-label">Date :</span> {{ $acte->date_mar->format('d/m/Y') }}</p>
+                <p><span class="field-label">Heure :</span> {{ $acte->h_mar ?? 'Non précisée' }}</p>
+                <p><span class="field-label">Régime matrimonial :</span> {{ $acte->type_reg }}</p>
                 
             @elseif($type == 'deces')
                 <!-- Acte de décès -->
-                <p><span class="field-label">Numéro de registre :</span> {{ $acte->numero_registre }}</p>
+                <p><span class="field-label">Numéro de registre :</span> {{ $acte->num_reg_dec }}</p>
                 <p class="mt-4">Je soussigné(e), Officier de l'État Civil de la commune de Yopougon, certifie que :</p>
                 
-                <p class="mt-4"><span class="font-bold uppercase">{{ $acte->nom_defunt }}</span>,</p>
-                <p><span class="field-label">Sexe :</span> {{ $acte->sexe_defunt }}</p>
-                <p><span class="field-label">Né(e) le :</span> {{ $acte->date_de_naissance_du_defunt->format('d/m/Y') }} à {{ $acte->lieu_de_naissance_du_defunt }}</p>
-                <p><span class="field-label">Décédé(e) le :</span> {{ $acte->date_deces->format('d/m/Y') }} à {{ $acte->heure_deces }}</p>
-                <p><span class="field-label">Lieu du décès :</span> {{ $acte->lieu_deces }}</p>
-                <p><span class="field-label">Dernier domicile :</span> {{ $acte->defunt_domicile }}</p>
+                <p class="mt-4"><span class="font-bold uppercase">{{ $acte->nom_def }}</span>,</p>
+                <p><span class="field-label">Sexe :</span> {{ $acte->sexe_def }}</p>
                 
-                <p class="mt-4"><span class="field-label">Fils de :</span> {{ $acte->nom_pere_defunt }}</p>
-                <p><span class="field-label">Et de :</span> {{ $acte->nom_mere_defunt }}</p>
+                <p><span class="field-label">Décédé(e) le :</span> {{ $acte->date_dec->format('d/m/Y') }} à {{ $acte->h_dec }}</p>
+                <p><span class="field-label">Lieu du décès :</span> {{ $acte->lieu_dec }}</p>
+                <p><span class="field-label">Domicile :</span> {{ $acte->dom_def }}</p>
                 
-                @if($acte->nom_dernier_conjoint)
-                <p class="mt-4"><span class="field-label">Conjoint(e) :</span> {{ $acte->nom_dernier_conjoint }} {{ $acte->prenom_dernier_conjoint }}</p>
+                <p class="mt-4"><span class="field-label">Fils de :</span> {{ $acte->nom_p_def }}</p>
+                <p><span class="field-label">Et de :</span> {{ $acte->nom_m_def }}</p>
+                
+                @if($acte->nom_der_conj)
+                <p class="mt-4"><span class="field-label">Conjoint(e) :</span> {{ $acte->nom_der_conj }} {{ $acte->pnom_der_conj }}</p>
                 @endif
                 
-                <p class="mt-4">Délivré le {{ $acte->date_de_delivrance_deces->format('d/m/Y') }}.</p>
                 
             @elseif($type == 'divorce')
                 <!-- Acte de divorce -->
-                <p><span class="field-label">Numéro de registre :</span> {{ $acte->numero_registre }}</p>
+                <p><span class="field-label">Numéro de registre :</span> {{ $acte->num_reg_div }}</p>
                 <p class="mt-4">Je soussigné(e), Officier de l'État Civil de la commune de Yopougon, certifie que :</p>
                 
                 <p class="mt-4 font-bold">EX-CONJOINT :</p>
-                <p><span class="field-label">Nom et prénoms :</span> {{ $acte->nom_ex_conjoint }}</p>
-                <p><span class="field-label">Né(e) le :</span> {{ $acte->date_naissance_ex_conjoint->format('d/m/Y') }} à {{ $acte->lieu_naissance_ex_conjoint }}</p>
-                <p><span class="field-label">Domicile :</span> {{ $acte->domicile_ex_conjoint }}</p>
+                <p><span class="field-label">Nom et prénoms :</span> {{ $acte->nom_exconj }}</p>
+                <p><span class="field-label">Né(e) le :</span> {{ $acte->date_nais_exconj->format('d/m/Y') }} à {{ $acte->lieu_nais_exconj }}</p>
+                <p><span class="field-label">Domicile :</span> {{ $acte->dom_exconj }}</p>
                 
                 <p class="mt-4 font-bold">EX-CONJOINTE :</p>
-                <p><span class="field-label">Nom et prénoms :</span> {{ $acte->nom_ex_conjointe }}</p>
-                <p><span class="field-label">Né(e) le :</span> {{ $acte->date_naissance_ex_conjointe->format('d/m/Y') }} à {{ $acte->lieu_naissance_ex_conjointe }}</p>
-                <p><span class="field-label">Domicile :</span> {{ $acte->domicile_ex_conjointe }}</p>
+                <p><span class="field-label">Nom et prénoms :</span> {{ $acte->nom_exconjte }}</p>
+                <p><span class="field-label">Né(e) le :</span> {{ $acte->date_nais_exconjte->format('d/m/Y') }} à {{ $acte->lieu_nais_exconjte }}</p>
+                <p><span class="field-label">Domicile :</span> {{ $acte->dom_exconjte }}</p>
                 
                 <p class="mt-4 font-bold">JUGEMENT :</p>
-                <p><span class="field-label">Date du jugement :</span> {{ $acte->date_de_jugement->format('d/m/Y') }}</p>
-                <p><span class="field-label">Date de délivrance :</span> {{ $acte->date_de_delivrance_divorce->format('d/m/Y') }}</p>
+                <p><span class="field-label">Date du jugement :</span> {{ $acte->date_jug->format('d/m/Y') }}</p>
             @endif
             
             <p class="mt-8">Certifié véritable extrait conforme aux indications portées au registre.</p>

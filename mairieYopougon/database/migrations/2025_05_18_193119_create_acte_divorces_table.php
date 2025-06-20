@@ -11,24 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('acte_divorces', function (Blueprint $table) {
+        Schema::create('divorce', function (Blueprint $table) {
             $table->id();
-            $table->string('numero_registre', 5)->unique();
+            $table->string('num_reg_div', 5)->unique();
 
-            $table->string('nom_ex_conjoint');
-            $table->date('date_naissance_ex_conjoint');
-            $table->string('lieu_naissance_ex_conjoint');
-            $table->string('domicile_ex_conjoint');
+            $table->string('nom_exconj');
+            $table->date('date_nais_exconj');
+            $table->string('lieu_nais_exconj');
+            $table->string('dom_exconj');
 
-            $table->string('nom_ex_conjointe');
-            $table->date('date_naissance_ex_conjointe');
-            $table->string('lieu_naissance_ex_conjointe');
-            $table->string('domicile_ex_conjointe');
+            $table->string('nom_exconjte');
+            $table->date('date_nais_exconjte');
+            $table->string('lieu_nais_exconjte');
+            $table->string('dom_exconjte');
 
-            $table->date('date_de_jugement');
-            // $table->string('lieu_de_jugement');
-            $table->date('date_de_delivrance_divorce');
-
+            $table->date('date_jug');
             $table->timestamps();
         });
     }
@@ -38,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('acte_divorces');
+        Schema::dropIfExists('divorce');
     }
 };

@@ -20,22 +20,22 @@
 
                 <!-- Moyen de paiement -->
                 <div>
-                    <x-input-label for="moyen_paiement" :value="__('Moyen de paiement')" class="text-gray-700 font-medium" />
+                    <x-input-label for="Moyen_paie" :value="__('Moyen de paiement')" class="text-gray-700 font-medium" />
                     <div class="mt-2 relative">
                         <select 
-                            id="moyen_paiement" 
-                            name="moyen_paiement" 
+                            id="Moyen_paie" 
+                            name="Moyen_paie" 
                             class="block w-full pl-3 pr-10 py-3 text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 rounded-lg transition duration-200 appearance-none"
                             required
                         >
-                            <option value="">Sélectionnez...</option>
+                            <option value="">Sélectionnez</option>
                             <option value="wave">Wave</option>
                             <option value="mtn_money">MTN Money</option>
                             <option value="orange_money">Orange Money</option>
                             <option value="moov_money">Moov Money</option>
                         </select>
                     </div>
-                    <x-input-error :messages="$errors->get('moyen_paiement')" class="mt-2 text-sm text-red-600" />
+                    <x-input-error :messages="$errors->get('Moyen_paie')" class="mt-2 text-sm text-red-600" />
                 </div>
 
                 <!-- Bouton de paiement -->

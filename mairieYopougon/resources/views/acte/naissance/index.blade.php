@@ -44,19 +44,19 @@
                             @foreach($actes as $acte)
                             <tr class="hover:bg-gray-50 transition duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm font-medium text-gray-900">{{ $acte->numero_registre }}</div>
+                                    <div class="text-sm font-medium text-gray-900">{{ $acte->num_reg_nais }}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900 font-semibold">{{ $acte->prenom_enfant }} {{ $acte->nom_enfant }}</div>
+                                    <div class="text-sm text-gray-900 font-semibold">{{ $acte->pnom_enf }} {{ $acte->nom_enf }}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
-                                        {{ $acte->sexe_enfant === 'masculin' ? 'bg-blue-100 text-blue-800' : 'bg-pink-100 text-pink-800' }}">
-                                        {{ ucfirst($acte->sexe_enfant) }}
+                                        {{ $acte->sexe_enf === 'masculin' ? 'bg-blue-100 text-blue-800' : 'bg-pink-100 text-pink-800' }}">
+                                        {{ ucfirst($acte->sexe_enf) }}
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {{ $acte->date_naissance->format('d/m/Y') }}
+                                    {{ $acte->date_nais->format('d/m/Y') }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                     <div class="flex space-x-2">

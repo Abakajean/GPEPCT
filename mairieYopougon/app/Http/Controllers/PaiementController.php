@@ -26,16 +26,14 @@ class PaiementController extends Controller
     public function store(Request $request, Citoyen $citoyen)
     {
         $request->validate([
-            'moyen_paiement' => 'required|string|in:wave,mtn_money,orange_money,moov_money',
+            'Moyen_paie' => 'required|string|in:wave,mtn_money,orange_money,moov_money',
         ]);
 
         // Créer le paiement
         $paiement = Paiement::create([
             'citoyen_id' => $citoyen->id,
-            'moyen_paiement' => $request->moyen_paiement,
-            'montant' => 500,
-            // 'reference_paiement' => uniqid(),
-            // 'utilise' => true
+            'Moyen_paie' => $request->Moyen_paie,
+            'mont' => 500,
         ]);
 
         // Récupérer l'acte depuis la session
@@ -43,47 +41,26 @@ class PaiementController extends Controller
 
         // Rediriger vers la page de téléchargement
         return redirect()->route('acte.download', [
-            'type' => $acteData['type_acte'],
+            'type' => $acteData['type_a'],
             'numero' => $acteData['numero_registre']
         ]);
     }
-
-    // public function download($type, $numero)
-    // {
-    //     // Vérifier que le paiement a été effectué
-    //     if (!session()->has('acte_a_payer')) {
-    //         return redirect()->route('home')
-    //             ->withErrors(['message' => 'Accès non autorisé']);
-    //     }
-
-    //     $acteData = session('acte_a_payer');
-        
-    //     // Nettoyer la session
-    //     session()->forget('acte_a_payer');
-
-    //     // Rediriger vers la page d'impression
-    //     return redirect()->route('acte.imprimer', [
-    //         'type' => $type,
-    //         'numero' => $numero
-    //     ]);
-    // }
-
     public function download($type, $numero)
     {
         $acte = null;
         
         switch($type) {
             case 'naissance':
-                $acte = ActeNaissance::where('numero_registre', $numero)->firstOrFail();
+                $acte = ActeNaissance::where('num_reg_nais', $numero)->firstOrFail();
                 break;
             case 'mariage':
-                $acte = ActeMariage::where('numero_registre', $numero)->firstOrFail();
+                $acte = ActeMariage::where('num_reg_mar', $numero)->firstOrFail();
                 break;
             case 'deces':
-                $acte = ActeDeces::where('numero_registre', $numero)->firstOrFail();
+                $acte = ActeDeces::where('num_reg_dec', $numero)->firstOrFail();
                 break;
             case 'divorce':
-                $acte = ActeDivorce::where('numero_registre', $numero)->firstOrFail();
+                $acte = ActeDivorce::where('num_reg_div', $numero)->firstOrFail();
                 break;
             default:
                 abort(404);

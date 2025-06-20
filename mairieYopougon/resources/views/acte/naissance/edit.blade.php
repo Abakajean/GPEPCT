@@ -26,11 +26,11 @@
                         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                             <!-- Numéro registre -->
                             <div>
-                                <label for="numero_registre" class="block text-sm font-medium text-green-800">Numéro de registre (5 chiffres)</label>
-                                <input type="text" id="numero_registre" name="numero_registre" value="{{ old('numero_registre', $acte->numero_registre) }}" 
+                                <label for="num_reg_nais" class="block text-sm font-medium text-green-800">Numéro de registre (5 chiffres)</label>
+                                <input type="text" id="num_reg_nais" name="num_reg_nais" value="{{ old('num_reg_nais', $acte->num_reg_nais) }}" 
                                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                                        required>
-                                @error('numero_registre')
+                                @error('num_reg_nais')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
@@ -46,64 +46,64 @@
                             </div>
 
                             <div>
-                                <label for="nom_enfant" class="block text-sm font-medium text-green-800">Nom de l'enfant</label>
-                                <input type="text" id="nom_enfant" name="nom_enfant" value="{{ old('nom_enfant', $acte->nom_enfant) }}"
+                                <label for="nom_enf" class="block text-sm font-medium text-green-800">Nom de l'enfant</label>
+                                <input type="text" id="nom_enf" name="nom_enf" value="{{ old('nom_enf', $acte->nom_enf) }}"
                                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                                        required>
-                                @error('nom_enfant')
+                                @error('nom_enf')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
 
                             <div>
-                                <label for="prenom_enfant" class="block text-sm font-medium text-green-800">Prénom de l'enfant</label>
-                                <input type="text" id="prenom_enfant" name="prenom_enfant" value="{{ old('prenom_enfant', $acte->prenom_enfant) }}"
+                                <label for="pnom_enf" class="block text-sm font-medium text-green-800">Prénom de l'enfant</label>
+                                <input type="text" id="pnom_enf" name="pnom_enf" value="{{ old('pnom_enf', $acte->pnom_enf) }}"
                                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                                        required>
-                                @error('prenom_enfant')
+                                @error('pnom_enf')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
 
                             <div>
-                                <label for="sexe_enfant" class="block text-sm font-medium text-green-800">Sexe de l'enfant</label>
-                                <select id="sexe_enfant" name="sexe_enfant"
+                                <label for="sexe_enf" class="block text-sm font-medium text-green-800">Sexe de l'enfant</label>
+                                <select id="sexe_enf" name="sexe_enf"
                                         class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                                         required>
-                                    <option value="masculin" {{ old('sexe_enfant', $acte->sexe_enfant) == 'masculin' ? 'selected' : '' }}>Masculin</option>
-                                    <option value="féminin" {{ old('sexe_enfant', $acte->sexe_enfant) == 'féminin' ? 'selected' : '' }}>Féminin</option>
+                                    <option value="masculin" {{ old('sexe_enf', $acte->sexe_enf) == 'masculin' ? 'selected' : '' }}>Masculin</option>
+                                    <option value="féminin" {{ old('sexe_enf', $acte->sexe_enf) == 'féminin' ? 'selected' : '' }}>Féminin</option>
                                 </select>
-                                @error('sexe_enfant')
+                                @error('sexe_enf')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
 
                             <div>
-                                <label for="date_naissance" class="block text-sm font-medium text-green-800">Date de naissance</label>
-                                <input type="date" id="date_naissance" name="date_naissance" value="{{ old('date_naissance', $acte->date_naissance->format('Y-m-d')) }}"
+                                <label for="date_nais" class="block text-sm font-medium text-green-800">Date de naissance</label>
+                                <input type="date" id="date_nais" name="date_nais" value="{{ old('date_nais', $acte->date_nais->format('Y-m-d')) }}"
                                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                                        required>
-                                @error('date_naissance')
+                                @error('date_nais')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
 
                             <div>
-                                <label for="lieu_naissance" class="block text-sm font-medium text-green-800">Lieu de naissance</label>
-                                <input type="text" id="lieu_naissance" name="lieu_naissance" value="{{ old('lieu_naissance', $acte->lieu_naissance) }}"
+                                <label for="lieu_nais" class="block text-sm font-medium text-green-800">Lieu de naissance</label>
+                                <input type="text" id="lieu_nais" name="lieu_nais" value="{{ old('lieu_nais', $acte->lieu_nais) }}"
                                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                                        required>
-                                @error('lieu_naissance')
+                                @error('lieu_nais')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
 
                             <div>
-                                <label for="heure_de_naissance" class="block text-sm font-medium text-green-800">Heure de naissance</label>
-                                <input type="time" id="heure_de_naissance" name="heure_de_naissance" value="{{ old('heure_de_naissance', $acte->heure_de_naissance) }}"
+                                <label for="h_nais_enf" class="block text-sm font-medium text-green-800">Heure de naissance</label>
+                                <input type="time" id="h_nais_enf" name="h_nais_enf" value="{{ old('h_nais_enf', $acte->h_nais_enf) }}"
                                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                                        required>
-                                @error('heure_de_naissance')
+                                @error('h_nais_enf')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
@@ -119,11 +119,11 @@
                             </div>
 
                             <div>
-                                <label for="nom_et_prenom_pere" class="block text-sm font-medium text-green-800">Nom et prénom</label>
-                                <input type="text" id="nom_et_prenom_pere" name="nom_et_prenom_pere" value="{{ old('nom_et_prenom_pere', $acte->nom_et_prenom_pere) }}"
+                                <label for="nom_pnom_pere" class="block text-sm font-medium text-green-800">Nom et prénom</label>
+                                <input type="text" id="nom_pnom_pere" name="nom_pnom_pere" value="{{ old('nom_pnom_pere', $acte->nom_pnom_pere) }}"
                                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                                        required>
-                                @error('nom_et_prenom_pere')
+                                @error('nom_pnom_pere')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
@@ -139,21 +139,11 @@
                             </div>
 
                             <div>
-                                <label for="nom_et_prenom_mere" class="block text-sm font-medium text-green-800">Nom et prénom</label>
-                                <input type="text" id="nom_et_prenom_mere" name="nom_et_prenom_mere" value="{{ old('nom_et_prenom_mere', $acte->nom_et_prenom_mere) }}"
+                                <label for="nom_pnom_mere" class="block text-sm font-medium text-green-800">Nom et prénom</label>
+                                <input type="text" id="nom_pnom_mere" name="nom_pnom_mere" value="{{ old('nom_pnom_mere', $acte->nom_pnom_mere) }}"
                                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                                        required>
-                                @error('nom_et_prenom_mere')
-                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-                            
-                            <div>
-                                <label for="date_declaration_naissance" class="block text-sm font-medium text-green-800">Date de déclaration de naissance</label>
-                                <input type="date" id="date_declaration_naissance" name="date_declaration_naissance" value="{{ old('date_declaration_naissance', $acte->date_declaration_naissance->format('Y-m-d')) }}"
-                                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                                       required>
-                                @error('date_declaration_naissance')
+                                @error('nom_pnom_mere')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>

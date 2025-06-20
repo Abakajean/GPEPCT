@@ -20,14 +20,13 @@ class CitoyenController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'nom' => 'required|string|max:255',
-            'prenom' => 'required|string|max:255',
+            'nom_cit' => 'required|string|max:255',
+            'pnom_ct' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'telephone' => 'required|string|max:20',
-            'sexe' => 'required|string|in:homme,femme',
-            'pays' => 'required|string|max:255',
-            'ville' => 'required|string|max:255',
-            'type_acte' => 'required|string|in:naissance,mariage,deces,divorce',
+            'tel' => 'required|string|max:20',
+            'Pays' => 'required|string|max:255',
+            'ville_cit' => 'required|string|max:255',
+            'type_a' => 'required|string|in:naissance,mariage,deces,divorce',
         ]);
 
         $citoyen = Citoyen::create($validated);
@@ -41,41 +40,42 @@ class CitoyenController extends Controller
     }
 
     public function verifyRegistre(Request $request, Citoyen $citoyen)
-    {
-        $request->validate([
-            'numero_registre' => 'required|string|size:5',
-        ]);
+{
+    $request->validate([
+        'numero_registre' => 'required|string|size:5',
+    ]);
 
-        $acte = null;
-        $type = $citoyen->type_acte;
-        
-        switch($type) {
-            case 'naissance':
-                $acte = ActeNaissance::where('numero_registre', $request->numero_registre)->first();
-                break;
-            case 'mariage':
-                $acte = ActeMariage::where('numero_registre', $request->numero_registre)->first();
-                break;
-            case 'deces':
-                $acte = ActeDeces::where('numero_registre', $request->numero_registre)->first();
-                break;
-            case 'divorce':
-                $acte = ActeDivorce::where('numero_registre', $request->numero_registre)->first();
-                break;
-        }
+    $numero = $request->input('numero_registre');
+    $type = $citoyen->type_a;
+    $acte = null;
 
-        if (!$acte) {
-            return back()->withErrors(['numero_registre' => 'Numéro de registre introuvable']);
-        }
-
-        // Stocker l'acte dans la session
-        session()->put('acte_a_payer', [
-            'citoyen_id' => $citoyen->id,
-            'type_acte' => $type,
-            'numero_registre' => $acte->numero_registre,
-            'acte_data' => $acte->toArray()
-        ]);
-
-        return view('citoyen.verification', compact('acte', 'citoyen', 'type'));
+    switch($type) {
+        case 'naissance':
+            $acte = ActeNaissance::where('num_reg_nais', $numero)->first();
+            break;
+        case 'mariage':
+            $acte = ActeMariage::where('num_reg_mar', $numero)->first();
+            break;
+        case 'deces':
+            $acte = ActeDeces::where('num_reg_dec', $numero)->first();
+            break;
+        case 'divorce':
+            $acte = ActeDivorce::where('num_reg_div', $numero)->first();
+            break;
     }
+
+    if (!$acte) {
+        return back()->withErrors(['numero_registre' => 'Numéro de registre introuvable']);
+    }
+
+    session()->put('acte_a_payer', [
+        'citoyen_id' => $citoyen->id,
+        'type_a' => $type,
+        'numero_registre' => $numero,
+        'acte_data' => $acte->toArray(),
+    ]);
+
+    return view('citoyen.verification', compact('acte', 'citoyen', 'type'));
+}
+
 }

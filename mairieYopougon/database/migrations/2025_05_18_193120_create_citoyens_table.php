@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('citoyens', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('prenom');
+            $table->string('nom_cit');
+            $table->string('pnom_ct');
             $table->string('email');
-            $table->string('telephone');
-            $table->string('sexe');
-            $table->string('pays');
-            $table->string('ville');
-            $table->string('type_acte');
+            $table->string('tel');
+            $table->string('Pays');
+            $table->string('ville_cit');
+            $table->string('type_a');
             $table->timestamps();
         });
     }

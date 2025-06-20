@@ -83,7 +83,7 @@
   <nav class="fixed top-0 left-0 right-0 bg-orange-400 shadow-lg shadow-black z-40 px-10 py-4 flex items-center justify-between">
     <!-- Titre bien aligné -->
     <div class="text-white font-bold text-2xl">
-      Registre Ivoirien 2.0
+      Etat civil de Yopougon
     </div>
   
     <!-- Menu -->
@@ -113,7 +113,7 @@
 
       <!-- Texte et bouton -->
       <div class="header-content">
-        <h1 class="font-extrabold text-4xl sm:text-5xl">Bienvenue sur Registre Ivoirien 2.0</h1>
+        <h1 class="font-extrabold text-4xl sm:text-5xl">Bienvenue sur Etat civil de Yopougon</h1>
         <!-- MODIFICATION ICI : Bouton "Savoir Plus" transformé en lien vers le formulaire -->
         <a href="{{ route('citoyen.create') }}" class="mt-8 px-4 py-2 border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition duration-200 rounded flex items-center gap-2 mx-auto">
           Faire une Demande
@@ -193,7 +193,7 @@
     <div class="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 z-10">
       <!-- Logo -->
       <div>
-        <h2 class="text-2xl font-bold">Registre Ivoirien 2.0</h2>
+        <h2 class="text-2xl font-bold">Etat civil de Yopougon</h2>
         <p class="mt-3 text-gray-300">
           Plateforme dédiée à la gestion des actes d'état civil en Côte d'Ivoire. Garantir sécurité et intégrité.
         </p>
@@ -241,8 +241,8 @@
   
     <!-- Texte de fin -->
     <div class="relative z-10 mt-8 text-center text-sm text-white">
-      <p>© 2025 Registre Ivoirien 2.0. Tous droits réservés.</p>
-      <p>Développé par <a href="#" class="text-orange-500 font-semibold">Le groupe Registre Ivoirien 2.0</a></p>
+      <p>© 2025 Etat civil de Yopougon. Tous droits réservés.</p>
+      <p>Développé par <a href="#" class="text-orange-500 font-semibold">Le groupe Etat civil de Yopougon</a></p>
     </div>
   </footer>
   

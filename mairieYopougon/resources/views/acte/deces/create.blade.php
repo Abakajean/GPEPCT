@@ -16,11 +16,11 @@
                 <div class="space-y-6">
                     <!-- Numéro de registre -->
                     <div>
-                        <label for="numero_registre" class="block text-sm font-medium text-gray-700">Numéro de registre (5 chiffres)</label>
-                        <input type="number" id="numero_registre" name="numero_registre" value="{{ old('numero_registre') }}"
+                        <label for="num_reg_dec" class="block text-sm font-medium text-gray-700">Numéro de registre (5 chiffres)</label>
+                        <input type="number" id="num_reg_dec" name="num_reg_dec" value="{{ old('num_reg_dec') }}"
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                             required>
-                        @error('numero_registre')
+                        @error('num_reg_dec')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
@@ -34,91 +34,80 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                             <!-- Nom défunt -->
                             <div>
-                                <label for="nom_defunt" class="block text-sm font-medium text-gray-700">Nom du défunt</label>
-                                <input type="text" id="nom_defunt" name="nom_defunt" value="{{ old('nom_defunt') }}"
+                                <label for="nom_def" class="block text-sm font-medium text-gray-700">Nom du défunt</label>
+                                <input type="text" id="nom_def" name="nom_def" value="{{ old('nom_def') }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                                     required>
-                                @error('nom_defunt')
+                                @error('nom_def')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <!-- Sexe défunt -->
                             <div>
-                                <label for="sexe_defunt" class="block text-sm font-medium text-gray-700">Sexe</label>
-                                <select id="sexe_defunt" name="sexe_defunt"
+                                <label for="sexe_def" class="block text-sm font-medium text-gray-700">Sexe</label>
+                                <select id="sexe_def" name="sexe_def"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                                     required>
                                     <option value="">Sélectionner</option>
-                                    <option value="masculin" {{ old('sexe_defunt') == 'masculin' ? 'selected' : '' }}>Masculin</option>
-                                    <option value="féminin" {{ old('sexe_defunt') == 'féminin' ? 'selected' : '' }}>Féminin</option>
+                                    <option value="masculin" {{ old('sexe_def') == 'masculin' ? 'selected' : '' }}>Masculin</option>
+                                    <option value="féminin" {{ old('sexe_def') == 'féminin' ? 'selected' : '' }}>Féminin</option>
                                 </select>
-                                @error('sexe_defunt')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-                            
-                            <!-- Date de naissance -->
-                            <div>
-                                <label for="date_de_naissance_du_defunt" class="block text-sm font-medium text-gray-700">Date de naissance</label>
-                                <input type="date" id="date_de_naissance_du_defunt" name="date_de_naissance_du_defunt" value="{{ old('date_de_naissance_du_defunt') }}"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
-                                    required>
-                                @error('date_de_naissance_du_defunt')
+                                @error('sexe_def')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <!-- Lieu de naissance -->
                             <div>
-                                <label for="lieu_de_naissance_du_defunt" class="block text-sm font-medium text-gray-700">Lieu de naissance</label>
-                                <input type="text" id="lieu_de_naissance_du_defunt" name="lieu_de_naissance_du_defunt" value="{{ old('lieu_de_naissance_du_defunt') }}"
+                                <label for="lieu_nais_def" class="block text-sm font-medium text-gray-700">Lieu de naissance</label>
+                                <input type="text" id="lieu_nais_def" name="lieu_nais_def" value="{{ old('lieu_nais_def') }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                                     required>
-                                @error('lieu_de_naissance_du_defunt')
+                                @error('lieu_nais_def')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <!-- Date de décès -->
                             <div>
-                                <label for="date_deces" class="block text-sm font-medium text-gray-700">Date du décès</label>
-                                <input type="date" id="date_deces" name="date_deces" value="{{ old('date_deces') }}"
+                                <label for="date_dec" class="block text-sm font-medium text-gray-700">Date du décès</label>
+                                <input type="date" id="date_dec" name="date_dec" value="{{ old('date_dec') }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                                     required>
-                                @error('date_deces')
+                                @error('date_dec')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <!-- Heure de décès -->
                             <div>
-                                <label for="heure_deces" class="block text-sm font-medium text-gray-700">Heure du décès</label>
-                                <input type="time" id="heure_deces" name="heure_deces" value="{{ old('heure_deces') }}"
+                                <label for="h_dec" class="block text-sm font-medium text-gray-700">Heure du décès</label>
+                                <input type="time" id="h_dec" name="h_dec" value="{{ old('h_dec') }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                                     required>
-                                @error('heure_deces')
+                                @error('h_dec')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <!-- Lieu de décès -->
                             <div>
-                                <label for="lieu_deces" class="block text-sm font-medium text-gray-700">Lieu du décès</label>
-                                <input type="text" id="lieu_deces" name="lieu_deces" value="{{ old('lieu_deces') }}"
+                                <label for="lieu_dec" class="block text-sm font-medium text-gray-700">Lieu du décès</label>
+                                <input type="text" id="lieu_dec" name="lieu_dec" value="{{ old('lieu_dec') }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                                     required>
-                                @error('lieu_deces')
+                                @error('lieu_dec')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
 
                             <div>
-                                <label for="defunt_domicile" class="block text-sm font-medium text-gray-700">Domicile</label>
-                                <input type="text" id="defunt_domicile" name="defunt_domicile" value="{{ old('defunt_domicile') }}"
+                                <label for="dom_def" class="block text-sm font-medium text-gray-700">Domicile</label>
+                                <input type="text" id="dom_def" name="dom_def" value="{{ old('dom_def') }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                                     required>
-                                @error('defunt_domicile')
+                                @error('dom_def')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
@@ -134,58 +123,45 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                             <!-- Nom père -->
                             <div>
-                                <label for="nom_pere_defunt" class="block text-sm font-medium text-gray-700">Nom du père</label>
-                                <input type="text" id="nom_pere_defunt" name="nom_pere_defunt" value="{{ old('nom_pere_defunt') }}"
+                                <label for="nom_p_def" class="block text-sm font-medium text-gray-700">Nom du père</label>
+                                <input type="text" id="nom_p_def" name="nom_p_def" value="{{ old('nom_p_def') }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                                     required>
-                                @error('nom_pere_defunt')
+                                @error('nom_p_def')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <!-- Nom mère -->
                             <div>
-                                <label for="nom_mere_defunt" class="block text-sm font-medium text-gray-700">Nom de la mère</label>
-                                <input type="text" id="nom_mere_defunt" name="nom_mere_defunt" value="{{ old('nom_mere_defunt') }}"
+                                <label for="nom_m_def" class="block text-sm font-medium text-gray-700">Nom de la mère</label>
+                                <input type="text" id="nom_m_def" name="nom_m_def" value="{{ old('nom_m_def') }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                                     required>
-                                @error('nom_mere_defunt')
+                                @error('nom_m_def')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <!-- Dernier conjoint -->
                             <div>
-                                <label for="nom_dernier_conjoint" class="block text-sm font-medium text-gray-700">Nom du dernier conjoint</label>
-                                <input type="text" id="nom_dernier_conjoint" name="nom_dernier_conjoint" value="{{ old('nom_dernier_conjoint') }}"
+                                <label for="nom_der_conj" class="block text-sm font-medium text-gray-700">Nom du dernier conjoint</label>
+                                <input type="text" id="nom_der_conj" name="nom_der_conj" value="{{ old('nom_der_conj') }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500">
-                                @error('nom_dernier_conjoint')
+                                @error('nom_der_conj')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <!-- Prénom dernier conjoint -->
                             <div>
-                                <label for="prenom_dernier_conjoint" class="block text-sm font-medium text-gray-700">Prénom du dernier conjoint</label>
-                                <input type="text" id="prenom_dernier_conjoint" name="prenom_dernier_conjoint" value="{{ old('prenom_dernier_conjoint') }}"
+                                <label for="pnom_der_conj" class="block text-sm font-medium text-gray-700">Prénom du dernier conjoint</label>
+                                <input type="text" id="pnom_der_conj" name="pnom_der_conj" value="{{ old('pnom_der_conj') }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500">
-                                @error('prenom_dernier_conjoint')
+                                @error('pnom_der_conj')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Section Déclarant -->
-                    <div class="border-t border-gray-200 pt-4">
-                        <div>
-                            <label for="date_de_delivrance_deces" class="block text-sm font-medium text-gray-700">Date de naissance</label>
-                            <input type="date" id="date_de_delivrance_deces" name="date_de_delivrance_deces" value="{{ old('date_de_delivrance_deces') }}"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
-                                required>
-                            @error('date_de_delivrance_deces')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
                         </div>
                     </div>
                     

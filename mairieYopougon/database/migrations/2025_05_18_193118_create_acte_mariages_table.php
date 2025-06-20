@@ -11,43 +11,30 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('acte_mariages', function (Blueprint $table) {
+        Schema::create('mariage', function (Blueprint $table) {
             $table->id();
-            $table->string('numero_registre', 5)->unique();
+            $table->string('num_reg_mar', 5)->unique();
 
             // Informations sur l'époux
-            $table->string('nom_epoux');
-            $table->string('epoux_profession');
-            $table->string('domicile_epoux');
-            $table->date('date_naissance_epoux');
-            $table->string('lieu_naissance_epoux');
-            
-
+            $table->string('nom_ep');
+            $table->string('Nom_pere_ep');
+            $table->string('nom_m_ep');
+            $table->date('date_nais_ep');
+            $table->string('lieu_nais_ep');
+            $table->string('dom_ep');
+ 
             // Informations sur l'épouse
-            $table->string('nom_epouse');
-            $table->string('epouse_profession');
-            $table->string('domicile_epouse');
-            $table->date('date_naissance_epouse');
-            $table->string('lieu_naissance_epouse');
-            // $table->string('nom_pere_epouse');
-            // $table->string('nom_mere_epouse');
+            $table->string('nom_eps');
+            $table->string('nom_p_eps');
+            $table->string('nom_m_eps');
+            $table->date('date_nais_eps');
+            $table->string('lieu_nais_eps');
+            $table->string('dom_eps');
 
             // Informations sur le mariage
-            $table->date('date_mariage');
-            $table->time('heure_mariage')->nullable();
-            $table->string('lieu_mariage');
-            $table->string('type_regime');
-
-            // Témoins
-            // $table->string('temoin_epoux_nom');
-            // $table->string('temoin_epoux_profession');
-            // $table->string('temoin_epoux_domicile');
-
-            // $table->string('temoin_epouse_nom');
-            // $table->string('temoin_epouse_profession');
-            // $table->string('temoin_epouse_domicile');
-
-            $table->string('date_declaration_mariage');
+            $table->date('date_mar');
+            $table->time('h_mar')->nullable();
+            $table->string('type_reg');
             $table->timestamps();
         });
     }
@@ -57,6 +44,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('acte_mariages');
+        Schema::dropIfExists('mariage');
     }
 };

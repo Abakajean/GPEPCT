@@ -11,22 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('acte_naissances', function (Blueprint $table) {
+        Schema::create('naissance', function (Blueprint $table) {
             $table->id();
-            $table->string('numero_registre', 5)->unique();
-            $table->string('nom_enfant');
-            $table->string('prenom_enfant');
-            $table->enum('sexe_enfant', ['masculin', 'féminin']);
-            $table->date('date_naissance');
-            $table->string('lieu_naissance');
-            $table->time('heure_de_naissance');
-            $table->string('nom_et_prenom_pere');
-            // $table->string('pere_profession');
-            // $table->string('pere_domicile');
-            $table->string('nom_et_prenom_mere');
-            // $table->string('mere_profession');
-            // $table->string('mere_domicile');
-            $table->date('date_declaration_naissance');
+            $table->string('num_reg_nais', 5)->unique();
+            $table->string('nom_enf');
+            $table->string('pnom_enf');
+            $table->enum('sexe_enf', ['masculin', 'féminin']);
+            $table->date('date_nais');
+            $table->string('lieu_nais');
+            $table->time('h_nais_enf');
+            $table->string('nom_pnom_pere');
+            $table->string('nom_pnom_mere');
             $table->timestamps();
         });
     }
@@ -36,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('acte_naissances');
+        Schema::dropIfExists('naissance');
     }
 };

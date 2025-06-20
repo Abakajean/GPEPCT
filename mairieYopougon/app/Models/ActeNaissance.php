@@ -10,24 +10,20 @@ class ActeNaissance extends Model
     use HasFactory;
 
     protected $casts = [
-        'date_naissance' => 'datetime',
-        'date_declaration_naissance' => 'datetime',
+        'date_nais' => 'datetime',
     ];
 
     protected $fillable = [
-        'numero_registre',
-        'nom_enfant',
-        'prenom_enfant',
-        'sexe_enfant',
-        'date_naissance',
-        'lieu_naissance',
-        'heure_de_naissance',
-        'nom_et_prenom_pere',
-        // 'pere_profession',
-        // 'pere_domicile',
-        'nom_et_prenom_mere',
-        // 'mere_profession',
-        // 'mere_domicile',
-        'date_declaration_naissance'
+        'num_reg_nais',
+        'nom_enf',
+        'pnom_enf',
+        'sexe_enf',
+        'date_nais',
+        'lieu_nais',
+        'h_nais_enf',
+        'nom_pnom_pere',
+        'nom_pnom_mere',
     ];
+
+    protected $table = 'naissance';
 }

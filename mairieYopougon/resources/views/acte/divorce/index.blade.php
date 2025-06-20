@@ -46,16 +46,16 @@
                             @forelse($actes as $acte)
                             <tr class="hover:bg-orange-50 transition-colors duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                    {{ $acte->numero_registre }}
+                                    {{ $acte->num_reg_div }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                                    {{ $acte->nom_ex_conjoint }}
+                                    {{ $acte->nom_exconj }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                                    {{ $acte->nom_ex_conjointe }}
+                                    {{ $acte->nom_exconjte }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                                    {{ $acte->date_de_jugement->format('d/m/Y') }}
+                                    {{ $acte->date_jug->format('d/m/Y') }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                     <div class="flex space-x-3">

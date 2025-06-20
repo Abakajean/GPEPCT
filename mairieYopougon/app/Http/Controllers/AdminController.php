@@ -20,7 +20,7 @@ class AdminController extends Controller
         
         $stats = [
             'citoyens' => Citoyen::count(),
-            'paiements' => Paiement::sum('montant'),
+            'paiements' => Paiement::sum('mont'),
             'naissances' => ActeNaissance::count(),
             'mariages' => ActeMariage::count(),
             'deces' => ActeDeces::count(),
@@ -30,7 +30,7 @@ class AdminController extends Controller
         
         $repartition = [
             'cote_divoire' => Citoyen::where('pays', "Côte d'Ivoire")->count(),
-            'abidjan' => Citoyen::where('ville', 'Abidjan')->count(),
+            'abidjan' => Citoyen::where('ville_cit', 'Abidjan')->count(),
             'hors_cote_divoire' => Citoyen::where('pays', '!=', "Côte d'Ivoire")->count(),
         ];
 

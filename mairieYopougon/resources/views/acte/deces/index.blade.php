@@ -45,16 +45,16 @@
                         @foreach($actes as $acte)
                         <tr class="hover:bg-gray-50 transition duration-150">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                {{ $acte->numero_registre }}
+                                {{ $acte->num_reg_dec }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                                {{ $acte->nom_defunt }}
+                                {{ $acte->nom_def }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                                {{ $acte->date_deces->format('d/m/Y') }}
+                                {{ $acte->date_dec->format('d/m/Y') }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                                {{ $acte->lieu_deces }}
+                                {{ $acte->lieu_dec }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                 <div class="flex space-x-3">

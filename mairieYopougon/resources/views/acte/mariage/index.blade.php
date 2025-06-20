@@ -69,16 +69,16 @@
                             @forelse($actes as $acte)
                             <tr class="hover:bg-gray-50 transition duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                    {{ $acte->numero_registre }}
+                                    {{ $acte->num_reg_mar }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {{ $acte->nom_epoux }}
+                                    {{ $acte->nom_ep }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {{ $acte->nom_epouse }}
+                                    {{ $acte->nom_eps }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {{ $acte->date_mariage->format('d/m/Y') }}
+                                    {{ $acte->date_mar->format('d/m/Y') }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                     <div class="flex space-x-2">

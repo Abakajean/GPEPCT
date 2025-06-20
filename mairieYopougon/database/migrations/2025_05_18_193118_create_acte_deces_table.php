@@ -11,25 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('acte_deces', function (Blueprint $table) {
+        Schema::create('deces', function (Blueprint $table) {
             $table->id();
-            $table->string('numero_registre', 5)->unique();
-            $table->string('nom_defunt');
-            $table->date('date_deces');
-            $table->time('heure_deces');
-            $table->string('lieu_deces');
-            // $table->string('cause_deces');
-            $table->date('date_de_naissance_du_defunt');
-            $table->string('lieu_de_naissance_du_defunt');
-            $table->enum('sexe_defunt', ['masculin', 'féminin']);
-            $table->string('nom_dernier_conjoint');
-            $table->string('prenom_dernier_conjoint');
-            $table->string('nom_pere_defunt');
-            $table->string('nom_mere_defunt');
-            // $table->string('declarant_nom');
-            // $table->string('declarant_profession');
-            $table->string('defunt_domicile');
-            $table->date('date_de_delivrance_deces');
+            $table->string('num_reg_dec', 5)->unique();
+            $table->string('nom_def');
+            $table->date('date_dec');
+            $table->time('h_dec');
+            $table->string('lieu_dec');
+            $table->string('lieu_nais_def');
+            $table->enum('sexe_def', ['masculin', 'féminin']);
+            $table->string('nom_der_conj');
+            $table->string('pnom_der_conj');
+            $table->string('nom_p_def');
+            $table->string('nom_m_def');
+            $table->string('dom_def');
             $table->timestamps();
         });
     }
@@ -39,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('acte_deces');
+        Schema::dropIfExists('deces');
     }
 };

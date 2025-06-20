@@ -14,31 +14,31 @@
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                     <!-- Nom -->
                     <div>
-                        <x-input-label for="nom" :value="__('Nom')" class="text-gray-700 font-medium" />
+                        <x-input-label for="nom_cit" :value="__('Nom')" class="text-gray-700 font-medium" />
                         <x-text-input 
-                            id="nom" 
+                            id="nom_cit" 
                             class="block mt-2 w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition duration-200 px-4 py-2 border" 
                             type="text" 
-                            name="nom" 
-                            :value="old('nom')" 
+                            name="nom_cit" 
+                            :value="old('nom_cit')" 
                             required 
                             autofocus 
                         />
-                        <x-input-error :messages="$errors->get('nom')" class="mt-2 text-sm text-red-600" />
+                        <x-input-error :messages="$errors->get('nom_cit')" class="mt-2 text-sm text-red-600" />
                     </div>
 
                     <!-- Prénom -->
                     <div>
-                        <x-input-label for="prenom" :value="__('Prénom')" class="text-gray-700 font-medium" />
+                        <x-input-label for="pnom_ct" :value="__('Prénom')" class="text-gray-700 font-medium" />
                         <x-text-input 
-                            id="prenom" 
+                            id="pnom_ct" 
                             class="block mt-2 w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition duration-200 px-4 py-2 border" 
                             type="text" 
-                            name="prenom" 
-                            :value="old('prenom')" 
+                            name="pnom_ct" 
+                            :value="old('pnom_ct')" 
                             required 
                         />
-                        <x-input-error :messages="$errors->get('prenom')" class="mt-2 text-sm text-red-600" />
+                        <x-input-error :messages="$errors->get('pnom_ct')" class="mt-2 text-sm text-red-600" />
                     </div>
 
                     <!-- Email -->
@@ -57,78 +57,62 @@
 
                     <!-- Téléphone -->
                     <div class="sm:col-span-2">
-                        <x-input-label for="telephone" :value="__('Téléphone')" class="text-gray-700 font-medium" />
+                        <x-input-label for="tel" :value="__('Téléphone')" class="text-gray-700 font-medium" />
                         <x-text-input 
-                            id="telephone" 
+                            id="tel" 
                             class="block mt-2 w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition duration-200 px-4 py-2 border" 
                             type="tel" 
-                            name="telephone" 
-                            :value="old('telephone')" 
+                            name="tel" 
+                            :value="old('tel')" 
                             required 
                         />
-                        <x-input-error :messages="$errors->get('telephone')" class="mt-2 text-sm text-red-600" />
-                    </div>
-
-                    <!-- Sexe -->
-                    <div>
-                        <x-input-label for="sexe" :value="__('Sexe')" class="text-gray-700 font-medium" />
-                        <select 
-                            id="sexe" 
-                            name="sexe" 
-                            class="block mt-2 w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition duration-200 px-4 py-2 border text-gray-700" 
-                            required
-                        >
-                            <option value="">Sélectionnez...</option>
-                            <option value="homme" {{ old('sexe') == 'homme' ? 'selected' : '' }}>Homme</option>
-                            <option value="femme" {{ old('sexe') == 'femme' ? 'selected' : '' }}>Femme</option>
-                        </select>
-                        <x-input-error :messages="$errors->get('sexe')" class="mt-2 text-sm text-red-600" />
+                        <x-input-error :messages="$errors->get('tel')" class="mt-2 text-sm text-red-600" />
                     </div>
 
                     <!-- Type d'acte -->
                     <div>
-                        <x-input-label for="type_acte" :value="__('Type d\'acte')" class="text-gray-700 font-medium" />
+                        <x-input-label for="type_a" :value="__('Type d\'acte')" class="text-gray-700 font-medium" />
                         <select 
-                            id="type_acte" 
-                            name="type_acte" 
+                            id="type_a" 
+                            name="type_a" 
                             class="block mt-2 w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition duration-200 px-4 py-2 border text-gray-700" 
                             required
                         >
                             <option value="">Sélectionnez...</option>
-                            <option value="naissance" {{ old('type_acte') == 'naissance' ? 'selected' : '' }}>Acte de naissance</option>
-                            <option value="mariage" {{ old('type_acte') == 'mariage' ? 'selected' : '' }}>Acte de mariage</option>
-                            <option value="deces" {{ old('type_acte') == 'deces' ? 'selected' : '' }}>Acte de décès</option>
-                            <option value="divorce" {{ old('type_acte') == 'divorce' ? 'selected' : '' }}>Acte de divorce</option>
+                            <option value="naissance" {{ old('type_a') == 'naissance' ? 'selected' : '' }}>Acte de naissance</option>
+                            <option value="mariage" {{ old('type_a') == 'mariage' ? 'selected' : '' }}>Acte de mariage</option>
+                            <option value="deces" {{ old('type_a') == 'deces' ? 'selected' : '' }}>Acte de décès</option>
+                            <option value="divorce" {{ old('type_a') == 'divorce' ? 'selected' : '' }}>Acte de divorce</option>
                         </select>
-                        <x-input-error :messages="$errors->get('type_acte')" class="mt-2 text-sm text-red-600" />
+                        <x-input-error :messages="$errors->get('type_a')" class="mt-2 text-sm text-red-600" />
                     </div>
 
                     <!-- Pays -->
                     <div>
-                        <x-input-label for="pays" :value="__('Pays')" class="text-gray-700 font-medium" />
+                        <x-input-label for="Pays" :value="__('Pays')" class="text-gray-700 font-medium" />
                         <x-text-input 
-                            id="pays" 
+                            id="Pays" 
                             class="block mt-2 w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition duration-200 px-4 py-2 border" 
                             type="text" 
-                            name="pays" 
-                            :value="old('pays')" 
+                            name="Pays" 
+                            :value="old('Pays')" 
                             required 
                         />
-                        <x-input-error :messages="$errors->get('pays')" class="mt-2 text-sm text-red-600" />
+                        <x-input-error :messages="$errors->get('Pays')" class="mt-2 text-sm text-red-600" />
                     </div>
 
                     <!-- Ville -->
                     <div>
-                        <x-input-label for="ville" :value="__('Ville')" class="text-gray-700 font-medium" />
+                        <x-input-label for="ville_cit" :value="__('Ville')" class="text-gray-700 font-medium" />
                         <x-text-input 
-                            id="ville" 
+                            id="ville_cit" 
                             class="block mt-2 w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition duration-200 px-4 py-2 border" 
                             type="text" 
-                            name="ville" 
-                            :value="old('ville')" 
+                            name="ville_cit" 
+                            :value="old('ville_cit')" 
                             required 
                         />
-                        <x-input-error :messages="$errors->get('ville')" class="mt-2 text-sm text-red-600" />
+                        <x-input-error :messages="$errors->get('ville_cit')" class="mt-2 text-sm text-red-600" />
                     </div>
                 </div>
 

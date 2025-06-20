@@ -10,14 +10,13 @@ class Citoyen extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nom',
-        'prenom',
+        'nom_cit',
+        'pnom_ct',
         'email',
-        'telephone',
-        'sexe',
-        'pays',
-        'ville',
-        'type_acte'
+        'tel',
+        'Pays',
+        'ville_cit',
+        'type_a'
     ];
 
     public function paiement()
